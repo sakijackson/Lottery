@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="manifest" href="site.webmanifest"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="assets/css/slicknav.css"/>
+    <link rel="stylesheet" href="assets/css/flaticon.css"/>
+    <link rel="stylesheet" href="assets/css/gijgo.css"/>
+	<link rel="stylesheet" href="assets/css/animate.min.css"/>
+	<link rel="stylesheet" href="assets/css/magnific-popup.css"/>
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css"/>
+	<link rel="stylesheet" href="assets/css/themify-icons.css"/>
+	<link rel="stylesheet" href="assets/css/slick.css"/>
+	<link rel="stylesheet" href="assets/css/nice-select.css"/>
+	<link rel="stylesheet" href="assets/css/style.css"/>   
+     <title>Admin Home</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>  
+</body>
+</html>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyUserLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyUserLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyUserLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTicketInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TicketNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TicketPrice" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PriceAmount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DisplayDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DrawDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTicketInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertTicketInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TicketNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertDataSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertData" />
+  </wsdl:message>
+  <wsdl:message name="InsertDataSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUserLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyUserLogin" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUserLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyUserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertTicketInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertTicketInfo" />
+  </wsdl:message>
+  <wsdl:message name="InsertTicketInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertTicketInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketCount" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketCountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBServiceSoap">
+    <wsdl:operation name="InsertData">
+      <wsdl:input message="tns:InsertDataSoapIn" />
+      <wsdl:output message="tns:InsertDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyUserLogin">
+      <wsdl:input message="tns:VerifyUserLoginSoapIn" />
+      <wsdl:output message="tns:VerifyUserLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTicketInfo">
+      <wsdl:input message="tns:InsertTicketInfoSoapIn" />
+      <wsdl:output message="tns:InsertTicketInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketCount">
+      <wsdl:input message="tns:GetTicketCountSoapIn" />
+      <wsdl:output message="tns:GetTicketCountSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBServiceSoap" type="tns:DBServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertData">
+      <soap:operation soapAction="http://tempuri.org/InsertData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyUserLogin">
+      <soap:operation soapAction="http://tempuri.org/VerifyUserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTicketInfo">
+      <soap:operation soapAction="http://tempuri.org/InsertTicketInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketCount">
+      <soap:operation soapAction="http://tempuri.org/GetTicketCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBServiceSoap12" type="tns:DBServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertData">
+      <soap12:operation soapAction="http://tempuri.org/InsertData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyUserLogin">
+      <soap12:operation soapAction="http://tempuri.org/VerifyUserLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTicketInfo">
+      <soap12:operation soapAction="http://tempuri.org/InsertTicketInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketCount">
+      <soap12:operation soapAction="http://tempuri.org/GetTicketCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBService">
+    <wsdl:port name="DBServiceSoap" binding="tns:DBServiceSoap">
+      <soap:address location="https://localhost:44351/DBService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBServiceSoap12" binding="tns:DBServiceSoap12">
+      <soap12:address location="https://localhost:44351/DBService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
