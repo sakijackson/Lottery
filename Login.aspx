@@ -1,162 +1,100 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
-   
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <script type="text/javascript" >
-        $(document).ready(function () {
-            $('[id$=TextBox1]').on("keypress keyup", function (event) {
-                var key = event.keyCode;
-                if (!((key == 8) || (key == 32) || (key == 46) || (key >= 97 && key <= 122) || (key >= 65 && key <= 90))) {
-                    event.preventDefault();
-                }
-            });
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
-        });
-    </script>
-    <asp:MultiView ID="MultiView1" runat="server">          
-            <asp:View ID="ViewLogin"  runat="server" >
-                   <div style="padding-left:40%;padding-right:40%;padding-top:6%;padding-bottom:6%">
-                       <div style="border-radius: 25px;">
-                         <div style="text-align:center">Login</div>         
-                 <table  class="table-borderless" cellpadding="20" cellspacing="0" style="width:100%;text-align:center">
-               <tr>
-                  
-                   <td >
-                       <asp:TextBox ID="UserId" runat="server" CssClass="form-control" required="true" placeholder="UserName" ></asp:TextBox>
-                   </td>
-               </tr>
-               <tr>
-                  
-                   <td >
-                       <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="form-control" placeholder="Password" required="true"></asp:TextBox>
-                   </td>
-               </tr>
-               <tr>
-                   <td >
-               <asp:Button ID="BtnLogin" runat="server"  Text="Login"  CssClass="btn btn-primary" OnClick="BtnLogin_Click" />
-                  
-                   </td>
-               </tr>
-                     <tr>
-                         <td >
-                             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary" OnClick="LinkButton1_Click" >New User? Register Here</asp:LinkButton>
-                             
-                         </td>
-                                           </tr>
-           </table>               
-           </div>
-                 </div>
-            </asp:View>
-            
-            <asp:View ID="ViewRegister" runat="server">
-                 <div style="padding-left:30%;padding-right:30%;margin-top:10%">
-                <div style="text-align:center">Registration Info</div>
-                 <table class="table-borderless" cellpadding="20" cellspacing="0" style="width:100%;text-align:center">
-               <tr>                  
-                   <td >
-                       <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" required="true" placeholder="FirstName" ></asp:TextBox>
-                   </td>                               
-                   <td >
-                       <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" placeholder="Last Name" required="true"></asp:TextBox>
-                   </td>
-               </tr>
-                      <tr>                  
-                   <td >
-                       
-                       <asp:TextBox ID="TextBox3" runat="server" TextMode="EMail" CssClass="form-control" placeholder="Email" required="true" onkeyup="ValidateEmailID(this);" ></asp:TextBox>
-               
-                       </td>                               
-                   <td >
-                       <asp:TextBox ID="TextBox4" runat="server" TextMode="Password" CssClass="form-control" placeholder="Password" required="true"></asp:TextBox>
-                   </td>
-               </tr>
-                      <tr>                  
-                   <td >
-                       <asp:TextBox ID="TextBox5" runat="server" TextMode="Date" CssClass="form-control" required="true"></asp:TextBox>
-                   </td>
-                           
-                   <td >
-                       <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" required="true">
-                           <asp:ListItem Selected="False" >--Select Country--</asp:ListItem>
-                           <asp:ListItem>India</asp:ListItem>
+<!DOCTYPE html>
 
-                       </asp:DropDownList>                 
-                       
-                   </td>
-               </tr>
-                      <tr>                  
-                   <td >
-                       <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control" required="true" >
-                           <asp:ListItem Selected="False" >--Select ID--</asp:ListItem>
-                            <asp:ListItem>Passport</asp:ListItem>
-                            
-                       </asp:DropDownList>
-                   </td>
-                         
-                   <td >
-                      <%-- <input id="id" class="form-control" required="true" placeholder="id no" maxlength="8" onblur="return check();" />--%>
-                        <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control" required="true" placeholder="Id No" maxlength="8" ></asp:TextBox>
-                   </td>
-               </tr>
-                     <tr>
-                        
-                                    
-                   <td colspan="2 " >
-                       <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control" placeholder="Address" required="true"></asp:TextBox>
-                   </td>
-               </tr>
-                      <tr>                  
-                   <td >
-                       <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control" required="true">
-                            <asp:ListItem >--Select State--</asp:ListItem>
-                             <asp:ListItem>Tamilnadu</asp:ListItem>
-                             <asp:ListItem>kerala</asp:ListItem>
-                       </asp:DropDownList>
-                   </td>
-                           
-                   <td >
-                       <asp:DropDownList ID="DropDownList4" runat="server" CssClass="form-control" required="true">
-                           <asp:ListItem >--Select City--</asp:ListItem>
-                            <asp:ListItem>Chennai</asp:ListItem>
-                             <asp:ListItem>Coimbatore</asp:ListItem>
-                       </asp:DropDownList>
-                   </td>
-               </tr>
-                    <tr>                  
-                   <td >
-                       <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control" placeholder="Postal/Zip Code" required="true"></asp:TextBox>
-                   </td>
-                              
-                   <td >
-                       <asp:TextBox ID="TextBox9" runat="server" CssClass="form-control" placeholder="Phone Number" required="true" MaxLength="10"></asp:TextBox>
-                   </td>
-               </tr>
-               <tr>
-                   <td colspan="2">
-               <asp:Button ID="BtnRegister" runat="server"  Text="Register" CssClass="btn btn-primary" OnClick="BtnRegister_Click"/>
-                  
-                   </td>
-               </tr>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta charset="utf-8"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Login - Playdo</title>
+    <meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-                     <tr>
-                         <td colspan="2">
-                             
-                             <asp:LinkButton ID="LinkButton2" runat="server" BorderStyle="None" CssClass="btn btn-primary" OnClick="LinkButton2_Click" >Exiting User? Login </asp:LinkButton>
-                         </td>
-                                           </tr>
-           </table>        
+		<!-- favicon -->		
+		<link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico"/>
+
+		<!-- all css here -->
+
+		<!-- bootstrap v3.3.6 css -->
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<!-- font-awesome css -->
+		<link rel="stylesheet" href="css/font-awesome.min.css"/>
+		<!-- style css -->
+		<link rel="stylesheet" href="style.css"/>
+		<!-- responsive css -->
+		<link rel="stylesheet" href="css/responsive.css" />
+
+		<!-- modernizr css -->
+		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body  data-spy="scroll" data-target="#navbar-example">
+      <div class="login-area area-padding fix">
+          <div class="login-overlay"></div>
+            <div class="table">
+                <div class="table-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
+                                <div class="login-form">
+                                    <h4 class="login-title text-center">LOGIN</h4>
+                                    <div class="row">
+                                        <form id="contactForm" runat="server" class="log-form">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <%--<asp:TextBox ID="UserId" runat="server" CssClass="form-control" required="true" placeholder="Username"  required data-error="Please enter your name" ></asp:TextBox>--%>
+                                                <input type="text" id="UserId" runat="server" class="form-control" placeholder="User ID" required="required" autocomplete="off"  data-error-messsage="Please enter your name"/>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <input type="password" id="Password" runat="server" class="form-control" placeholder="Password" autocomplete="off" required="required"  data-error="Please enter your password"/>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                                <div class="check-group flexbox">
+                                                    <label class="check-box">
+                                                        <input type="checkbox" class="check-box-input" checked="checked"/>
+                                                        <span class="remember-text">Remember me</span>
+                                                    </label>
+
+                                                    <a class="text-muted" href="#">Forgot password?</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                                   <asp:Button ID="BtnLogin" runat="server"  Text="Login"  CssClass="slide-btn login-btn" OnClick="BtnLogin_Click" />
+                                                <%--<button type="submit" runat="server" id="submit" class="slide-btn login-btn">Login</button>--%>
+                                                <div id="msgSubmit" class="h3 text-center hidden"></div> 
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                               <%-- <div class="clear"></div>
+                                                <div class="separetor text-center"><span>Or with Sign</span></div>--%>
+                                                <div class="sign-icon">
+                                                    <%--<ul>
+                                                        <li><a class="facebook" href="#">Facebook</a></li>
+                                                        <li><a class="twitter" href="#">twitter</a></li>
+                                                        <li><a class="google" href="#">google+</a></li>
+                                                    </ul>--%>
+                                                    <div class="acc-not">Don't have an account  <a href="Signup.aspx">Sign up</a></div>
+                                                </div> 
+                                            </div> 
+                                        </form> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                      </div>
-            </asp:View>
-        <asp:View ID="ViewActivate"  runat="server" >
-                   <div style="padding-left:40%;padding-right:40%;padding-top:6%;padding-bottom:6%">
-                       <h4>You're Account Activated Sucessfully</h4>
-                       <h2>Login to buy Ticket </h2>
-                       <asp:Button ID="BtnLogin1" runat="server" Text="Login" CssClass="btn btn-primary" OnClick="BtnLogin1_Click" />
-                 </div>
-            </asp:View>
+                </div>
+                </div>
+        </div>
+        <!-- End Slider Area -->
+		
+		<!-- all js here -->
 
-        </asp:MultiView>
-</asp:Content> 
-
+		<!-- jquery latest version -->
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Form validator js -->
+		<script src="js/form-validator.min.js"></script>
+		<!-- plugins js -->
+		<script src="js/plugins.js"></script>
+  
+</body>
+</html>

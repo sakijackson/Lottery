@@ -28,11 +28,11 @@ public partial class Admin : System.Web.UI.Page
         try
         {
           
-            if (lws.InsertTicketInfo(TicketNo.Text.Trim(), int.Parse(TicketPrice.Text.Trim()), int.Parse(PriceAmount.Text.Trim()), DateTime.Parse(DateTime.Now.ToString("yyy-MM-dd")), DateTime.Parse(CloseDate.Text), DateTime.Parse(DrawDate.Text), Status.SelectedItem.Text))
-            {
-                Response.Redirect("Admin.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
-            }
+            //if (lws.InsertTicketInfo(TicketNo.Text.Trim(), int.Parse(TicketPrice.Text.Trim()), int.Parse(PriceAmount.Text.Trim()), DateTime.Parse(DateTime.Now.ToString("yyy-MM-dd")), DateTime.Parse(CloseDate.Text), DateTime.Parse(DrawDate.Text), Status.SelectedItem.Text))
+            //{
+            //    Response.Redirect("Admin.aspx", false);
+            //    Context.ApplicationInstance.CompleteRequest();
+            //}
 
         }
 

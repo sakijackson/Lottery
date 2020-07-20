@@ -4,690 +4,1080 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-       <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="description" content=""/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="manifest" href="site.webmanifest"/>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico"/>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="assets/css/slicknav.css"/>
-    <link rel="stylesheet" href="assets/css/flaticon.css"/>
-    <link rel="stylesheet" href="assets/css/gijgo.css"/>
-	<link rel="stylesheet" href="assets/css/animate.min.css"/>
-	<link rel="stylesheet" href="assets/css/magnific-popup.css"/>
-	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css"/>
-	<link rel="stylesheet" href="assets/css/themify-icons.css"/>
-	<link rel="stylesheet" href="assets/css/slick.css"/>
-	<link rel="stylesheet" href="assets/css/nice-select.css"/>
-	<link rel="stylesheet" href="assets/css/style.css"/> 
-     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Home | Playdo</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
+
+    <!-- all css here -->
+
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- magnific css -->
+    <link rel="stylesheet" href="css/magnific.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script>                 
         //  function UpdateTime(time)
         //  {              var timerdate = time;
         //      $("#countdown").countdown(timerdate, function (event) {                  
         //          $(this).html(event.strftime("<div class='cd-item'><span>%D</span><p>Days</p> </div>" + "<div class='cd-item'><span>%H</span><p>Hrs</p> </div>" + "<div class='cd-item'><span>%M</span><p>Min</p> </div>" + "<div class='cd-item'><span>%S</span><p>Sec</p> </div>"));
         //          });               
-             
+
         //}
         $(document).ready(function () {
 
-          //  window.menubar.visible = false;
-           // window.toolbar.visible = false;
+            //  window.menubar.visible = false;
+            // window.toolbar.visible = false;
             $("#Counter").Hide();
-          
+
         });
     </script>
-    <title>Home</title>         
+
 
 </head>
-<body >
-         <form runat="server">
-
-        <header>
-          <div class="header-area">
-        <div class="main-header header-sticky">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <!-- Logo -->
-                    <div class="col-xl-2 col-lg-2 col-md-1">
-                        <div class="logo" style="font-size:30px" id="d">
-                            Megalot
-                            <%--<a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>--%>
+<body>
+   
+  
+      
+		 <div id="preloader"></div>
+        <header class="header-one">
+            <!-- Start top bar -->
+            <div class="topbar-area">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-md-8 col-sm-8 col-xs-12">
+                            <div class="topbar-left">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> info@playdo4.com</a></li>
+                                    <li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>
+                                </ul>  
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="topbar-right">
+								<ul>
+                                    <%--<li><a href="#"><img src="img/icon/w1.png" alt="">English</a>
+                                       <ul>
+                                           <li><a href="#"><img src="img/icon/w2.png" alt="">Deutsch</a>
+                                           <li><a href="#"><img src="img/icon/w3.png" alt="">Español</a>
+                                           <li><a href="#"><img src="img/icon/w4.png" alt="">Français</a>
+                                           <li><a href="#"><img src="img/icon/w5.png" alt="">العربية</a>
+                                       </ul>
+                                    </li>--%>
+                                    <li><a id="log" runat="server" href="Login.aspx"><img src="img/icon/login.png" alt=""/>Login</a> </li>
+                                </ul>
+							</div>
                         </div>
                     </div>
-                    <div class="col-xl-10 col-lg-10 col-md-10">
-                        <div class="menu-main d-flex align-items-center justify-content-end">
-                            <!-- Main-menu -->
-                            <div class="main-menu f-right d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="Home.aspx">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="spakers.html">Spakers</a></li>
-                                        <li><a href="schedule.html">Schedule</a></li>
-                                       <%-- <li><a href="blog.html">blog</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="blog_details.html">blog details</a></li>
-                                                <li><a href="elements.html">element</a></li>
+                </div>
+            </div>
+            <!-- End top bar -->
+            <!-- header-area start -->
+            <div id="sticker" class="header-area header-area-2 hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <!-- logo start -->
+                        <div class="col-md-3 col-sm-3">
+                            <div class="logo">
+                                <!-- Brand -->
+                                <a class="navbar-brand " href="Home.aspx">
+                                    <img src="img/logo/logo2.png" alt=""/>
+                                </a>
+                            </div>
+                            <!-- logo end -->
+                        </div>
+                        <div class="col-md-9 col-sm-9">
+                            <div class="header-right-link">
+                                <!-- search option end -->
+								<a class="s-menu" href="Login.aspx">Join now</a>
+                            </div>
+                            <!-- mainmenu start -->
+                            <nav class="navbar navbar-default">
+                                <div class="collapse navbar-collapse" id="navbar-example">
+                                    <div class="main-menu">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a class="pagess" href="Home.aspx">Home</a>
+                                                <%--<ul class="sub-menu">
+                                                    <li><a href="index.html">Home 01</a></li>
+                                                    <li><a href="index-2.html">Home 02</a></li>
+                                                    <li><a href="index-3.html">Home 03</a></li>
+                                                </ul>--%>
+                                            </li>
+                                            <li><a class="pagess" href="play.html">Play</a></li>
+                                            <li><a class="pagess" href="#">Games</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="games.html">All Games</a></li>
+                                                    <li><a href="games-details.html">Games Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="pagess" href="lottery.html">Lottery</a></li>
+                                            <li><a class="pagess" href="#">Pages</a>
+                                                <ul class="sub-menu">
+                                                   <li><a href="about.html">About</a></li>
+                                                    <li><a href="team.html">team</a></li>
+                                                    <li><a href="faq.html">FAQ</a></li>
+                                                    <li><a href="pricing.html">Pricing</a></li>
+                                                    <li><a href="login.html">Login</a></li>
+                                                    <li><a href="signup.html">Signup</a></li>
+                                                    <li><a href="error.html">Error</a></li>
+                                                    <li><a href="terms.html">terms & Conditions</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="pagess" href="#">Blog</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="blog.html">Blog grid</a></li>
+                                                    <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">contacts</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            <!-- mainmenu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header-area end -->
+            <!-- mobile-menu-area start -->
+            <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <div class="logo">
+                                    <a href="index.html"><img src="img/logo/logo2.png" alt="" /></a>
+                                </div>
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a class="pagess" href="index.html">Home</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="index.html">Home 01</a></li>
+                                                <li><a href="index-2.html">Home 02</a></li>
+                                                <li><a href="index-3.html">Home 03</a></li>
                                             </ul>
-                                        </li>--%>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        </li>
+                                        <li><a class="pagess" href="play.html">Play</a></li>
+                                        <li><a class="pagess" href="#">Games</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="games.html">All Games</a></li>
+                                                <li><a href="games-details.html">Games Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="pagess" href="lottery.html">Lottery</a></li>
+                                        <li><a class="pagess" href="#">Pages</a>
+                                            <ul class="sub-menu">
+                                               <li><a href="about.html">About</a></li>
+                                                <li><a href="team.html">team</a></li>
+                                                <li><a href="faq.html">FAQ</a></li>
+                                                <li><a href="pricing.html">Pricing</a></li>
+                                                <li><a href="login.html">Login</a></li>
+                                                <li><a href="signup.html">Signup</a></li>
+                                                <li><a href="error.html">Error</a></li>
+                                                <li><a href="terms.html">terms & Conditions</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="pagess" href="#">Blog</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="blog.html">Blog grid</a></li>
+                                                <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">contacts</a></li>
                                     </ul>
                                 </nav>
-                            </div>
-                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="Login.aspx" class="btn header-btn">Login</a>
-                            </div>
+                            </div>					
                         </div>
-                    </div>   
-                    <!-- Mobile Menu -->
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
                     </div>
                 </div>
             </div>
+            <!-- mobile-menu-area end -->		
+        </header>
+        <!-- header end -->
+        <!-- Start Slider Area -->
+        <div class="intro-area intro-area-2">
+            <div class="bg-wrapper">
+            	<img src="img/background/slide-bg.png" alt="">
+            </div>
+			<div class="intro-content">
+				<div class="slider-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="slide-all-text">
+								    <!-- layer 1 -->
+                                    <div class="layer-1 wow fadeInUp" data-wow-delay="0.3s">
+                                        <h2 class="title2">Playing online games<span class="color"> Win Reward </span></h2>
+                                    </div>
+                                    <!-- layer 2 -->
+                                    <div class="layer-2 wow fadeInUp" data-wow-delay="0.5s">
+                                        <p>We develop effective plans to move your customers behaviour. customer can be alwayes his profit.</p>
+                                    </div>
+                                    <!-- layer 3 -->
+                                    <div class="layer-3 wow fadeInUp" data-wow-delay="0.7s">
+                                        <a href="#" class="ready-btn" >Get Started</a>
+                                    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
-    </div>
-     </header>
-    <main>
-         <div class="slider-area position-relative">
-        <div class="slider-active">
-            <!-- Single Slider -->
-            <%--<div class="single-slider slider-height d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10">
-                            <div class="hero__caption">
-                                <span data-animation="fadeInLeft" data-delay=".1s">Committed to success</span>
-                                <h1 data-animation="fadeInLeft" data-delay=".5s">Digital Conference For Designers</h1>
-                                <!-- Hero-btn -->
-                               <%-- <div class="slider-btns">
-                                    <a data-animation="fadeInLeft" data-delay="1.0s" href="industries.html" class="btn hero-btn">Download</a>
-                                    <a data-animation="fadeInRight" data-delay="1.0s" class="popup-video video-btn"  href="https://www.youtube.com/watch?v=up68UAfH0d0">
-                                        <i class="fas fa-play"></i></a>
-                                    <p class="video-cap d-none d-sm-blcok" data-animation="fadeInRight" data-delay="1.0s">Story Vidoe<br> Watch</p>
-                                </div>--%>
-                <%--            </div>
-                        </div>
-                    </div>
-                </div>          
-            </div>--%>
-            --%><!-- Single Slider -->
-            <div class="single-slider slider-height d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10">
-                            <div class="hero__caption">
-                                <span data-animation="fadeInLeft" data-delay=".1s">Committed to success</span>
-                                <h1 data-animation="fadeInLeft" data-delay=".5s">Time To Next Draw</h1>
-                                <!-- Hero-btn -->
-                                <div class="slider-btns">
-                                    <a data-animation="fadeInLeft" data-delay="1.0s" href="#" class="btn hero-btn">Buy</a>
-                                    <%--<a data-animation="fadeInRight" data-delay="1.0s" class="popup-video video-btn"  href="https://www.youtube.com/watch?v=up68UAfH0d0">
-                                        <i class="fas fa-play"></i></a>--%>
-                                    <p class="video-cap d-none d-sm-blcok" data-animation="fadeInRight" data-delay="1.0s">Story Vidoe<br> Watch</p>
+        <!-- End Slider Area -->
+        <!-- Start Achivement area -->
+        <div class="achivement-area bg-color area-padding-2">
+            <div class="container">
+                 <div class="row">
+                    <div class="achivement-content">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-achive first-achive">
+                                <div class="achive-image">
+                                    <img src="img/about/achive1.png" alt="">
+                                </div>
+                                <div class="achivement-text">
+                                    <span class="achive-number">1200+</span>
+                                    <h6>Live online</h6>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>          
-            </div>
-        </div>
-        <!-- Counter Section Begin -->
-        <%--<div id="counter" class="counter-section d-sm-block">--%>
-              <div id="Counter" class="counter-section d-none d-sm-block">
-            <div class="cd-timer" id="countdown" >
-                <div class="cd-item">
-                    <span>96</span>
-                    <p>Days</p>
-                </div>
-                <div class="cd-item">
-                    <span>15</span>
-                    <p>Hrs</p>
-                </div>
-                <div class="cd-item">
-                    <span>07</span>
-                    <p>Min</p>
-                </div>
-                <div class="cd-item">
-                    <span>02</span>
-                    <p>Sec</p>
-                </div>
-            </div>
-        </div>
-        <!-- Counter Section End -->
-    </div>
-    <!-- slider Area End-->
-    <!--? About Law Start-->
-    <!-- About Law End-->
-    <!--? Brand Area Start -->
- 
-    <!-- Brand Area End -->  
-    <!--? accordion -->
-    <section class="accordion fix section-padding30">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-5 col-lg-6 col-md-6">
-                    <!-- Section Tittle -->
-                    <div class="section-tittle text-center mb-80">
-                        <h2>Event Schedule</h2>
-                        <p>There arge many variations ohf passages of sorem gp ilable, but the majority have ssorem gp iluffe.</p>
-                    </div> 
-                </div>
-            </div>
-            <div class="row ">
-               <div class="col-lg-11">
-                    <div class="properties__button mb-40">
-                        <!--Nav Button  -->
-                        <nav>                                                                         
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Day - 01</a>
-                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"> Day - 02</a>
-                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"> Day - 03 </a>
-                                <a class="nav-item nav-link" id="nav-dinner-tab" data-toggle="tab" href="#nav-dinner" role="tab" aria-controls="nav-dinner" aria-selected="false"> Day - 04 </a>
-                            </div>
-                        </nav>
-                        <!--End Nav Button  -->
-                    </div>
-               </div>
-            </div>
-        </div>
-        <div class="container">
-            <!-- Nav Card -->
-            <div class="tab-content" id="nav-tabContent">
-                <!-- card one -->
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                   <div class="row">
-                        <div class="col-lg-11">
-                            <div class="accordion-wrapper">
-                                <div class="accordion" id="accordionExample">
-                                    <!-- single-one -->
-                                    <div class="card">
-                                        <div class="card-header" id="headingTwo">
-                                            <h2 class="mb-0">
-                                                <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    <span>8:30 AM - 9:30 AM</span>
-                                                    <p>Snackes</p>
-                                                </a> 
-                                            </h2>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single-two -->
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne">
-                                            <h2 class="mb-0">
-                                                <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    <span>8:30 AM - 9:30 AM</span>
-                                                    <p>Opening conference</p>
-                                                </a>
-                                            </h2>
-                                        </div>
-                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single-three -->
-                                    <div class="card">
-                                        <div class="card-header" id="headingThree">
-                                            <h2 class="mb-0">
-                                                <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    <span>8:30 AM - 9:30 AM</span>
-                                                    <p>Conference ending</p>
-                                                </a>
-                                            </h2>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-achive second-achive">
+                                <div class="achive-image">
+                                    <img src="img/about/achive2.png" alt="">
+                                </div>
+                                <div class="achivement-text">
+                                    <span class="achive-number">29038+</span>
+                                    <h6>Active Member</h6>
                                 </div>
                             </div>
                         </div>
-                   </div>
-                </div>
-                <!-- Card two -->
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <div class="row">
-                        <div class="col-lg-11">
-                            <div class="accordion-wrapper">
-                                <div class="accordion" id="accordionExample">
-                                    <!-- single-one -->
-                                    <div class="card">
-                                        <div class="card-header" id="headingTwo">
-                                            <h2 class="mb-0">
-                                                <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
-                                                    <span>8:30 AM - 9:30 AM</span>
-                                                    <p>Snackes</p>
-                                                </a> 
-                                            </h2>
-                                        </div>
-                                        <div id="collapseTwo2" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single-two -->
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne">
-                                            <h2 class="mb-0">
-                                                <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-                                                    <span>8:30 AM - 9:30 AM</span>
-                                                    <p>Opening conference</p>
-                                                </a>
-                                            </h2>
-                                        </div>
-                                        <div id="collapseOne1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single-three -->
-                                    <div class="card">
-                                        <div class="card-header" id="headingThree">
-                                            <h2 class="mb-0">
-                                                <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
-                                                    <span>8:30 AM - 9:30 AM</span>
-                                                    <p>Conference ending</p>
-                                                </a>
-                                            </h2>
-                                        </div>
-                                        <div id="collapseThree3" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-achive">
+                                <div class="achive-image">
+                                    <img src="img/about/achive3.png" alt="">
+                                </div>
+                                <div class="achivement-text">
+                                    <span class="achive-number">2000K+</span>
+                                    <h6>Daily Reward</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card three -->
-                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                    <div class="row">
-                            <div class="col-lg-11">
-                                <div class="accordion-wrapper">
-                                    <div class="accordion" id="accordionExample">
-                                        <!-- single-one -->
-                                        <div class="card">
-                                            <div class="card-header" id="headingTwo">
-                                                <h2 class="mb-0">
-                                                    <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo01" aria-expanded="false" aria-controls="collapseTwo01">
-                                                        <span>8:30 AM - 9:30 AM</span>
-                                                        <p>Snackes</p>
-                                                    </a> 
-                                                </h2>
-                                            </div>
-                                            <div id="collapseTwo01" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- single-two -->
-                                        <div class="card">
-                                            <div class="card-header" id="headingOne">
-                                                <h2 class="mb-0">
-                                                    <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne02" aria-expanded="true" aria-controls="collapseOne02">
-                                                        <span>8:30 AM - 9:30 AM</span>
-                                                        <p>Opening conference</p>
-                                                    </a>
-                                                </h2>
-                                            </div>
-                                            <div id="collapseOne02" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- single-three -->
-                                        <div class="card">
-                                            <div class="card-header" id="headingThree">
-                                                <h2 class="mb-0">
-                                                    <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree03" aria-expanded="false" aria-controls="collapseThree03">
-                                                        <span>8:30 AM - 9:30 AM</span>
-                                                        <p>Conference ending</p>
-                                                    </a>
-                                                </h2>
-                                            </div>
-                                            <div id="collapseThree03" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-                <!-- Card Four -->
-                <div class="tab-pane fade" id="nav-dinner" role="tabpanel" aria-labelledby="nav-dinner">
-                    <div class="row">
-                            <div class="col-lg-11">
-                                <div class="accordion-wrapper">
-                                    <div class="accordion" id="accordionExample">
-                                        <!-- single-one -->
-                                        <div class="card">
-                                            <div class="card-header" id="headingTwo">
-                                                <h2 class="mb-0">
-                                                    <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo10" aria-expanded="false" aria-controls="collapseTwo10">
-                                                        <span>8:30 AM - 9:30 AM</span>
-                                                        <p>Snackes</p>
-                                                    </a> 
-                                                </h2>
-                                            </div>
-                                            <div id="collapseTwo10" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- single-two -->
-                                        <div class="card">
-                                            <div class="card-header" id="headingOne">
-                                                <h2 class="mb-0">
-                                                    <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne20" aria-expanded="true" aria-controls="collapseOne20">
-                                                        <span>8:30 AM - 9:30 AM</span>
-                                                        <p>Opening conference</p>
-                                                    </a>
-                                                </h2>
-                                            </div>
-                                            <div id="collapseOne20" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- single-three -->
-                                        <div class="card">
-                                            <div class="card-header" id="headingThree">
-                                                <h2 class="mb-0">
-                                                    <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree30" aria-expanded="false" aria-controls="collapseThree30">
-                                                        <span>8:30 AM - 9:30 AM</span>
-                                                        <p>Conference ending</p>
-                                                    </a>
-                                                </h2>
-                                            </div>
-                                            <div id="collapseThree30" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
             </div>
-            <!-- End Nav Card -->
         </div>
-    </section>
-    <!-- accordion End -->
-    <!--? gallery Products Start -->
-   
-   
-    <!-- gallery Products End -->
-    <!--? Pricing Card Start -->
-    <section class="pricing-card-area section-padding2">
-        <div class="container">
-            <!-- Section Tittle -->
-            <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-8">
-                    <div class="section-tittle text-center mb-100">
-                        <h2>Program Pricing</h2>
-                        <%--<p>There arge many variations ohf passages of sorem gp ilable, but the majority have ssorem gp iluffe.</p>--%>
+        <!-- End Achivement area -->
+        <!-- Start About Area -->
+        <div class="about-area about-area-2 bg-color-2 fix area-padding-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <!-- Start services -->
+                        <div class="support-services">
+                            <img class="support-images" src="img/about/ab-icon.png" alt="">
+                            <div class="support-content">
+                                <h4>Live online game</h4>
+                                <p>Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define. define their new business objectives and then.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start services -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="support-services">
+                            <img class="support-images" src="img/about/ab-icon2.png" alt="">
+                            <div class="support-content">
+                                <h4>Instant Reward</h4>
+                                <p>Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define. define their new business objectives and then</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start services -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="support-services">
+                            <img class="support-images" src="img/about/ab-icon3.png" alt="">
+                            <div class="support-content">
+                                <h4>Refferral bonus</h4>
+                                <p>Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define. define their new business objectives and then.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start services -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="support-services">
+                            <img class="support-images" src="img/about/ab-icon4.png" alt="">
+                            <div class="support-content">
+                                <h4>100% secure</h4>
+                                <p>Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define. define their new business objectives and then.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start services -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="support-services">
+                            <img class="support-images" src="img/about/ab-icon5.png" alt="">
+                            <div class="support-content">
+                                <h4>Winning reward</h4>
+                                <p>Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define. define their new business objectives and then.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start services -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="support-services">
+                            <img class="support-images" src="img/about/ab-icon6.png" alt="">
+                            <div class="support-content">
+                                <h4>Live Support</h4>
+                                <p>Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define. define their new business objectives and then.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start services -->
+                 </div>
+            </div>
+        </div>
+        <!-- End About Area -->
+        <!-- Start Games Area -->
+        <div class="games-area games-area-2  bg-color area-padding-2">
+            <div class="container">
+              <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+							<h3>Online games</h3>
+							<p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts</p>
+						</div>
+					</div>
+				</div>
+               <div class="row">
+					<div class="all-games">
+                        <!-- single-games end-->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-games">
+                                <h4>Wins goal</h4> 
+                                <div class="games-img">
+                                    <img src="img/games/g1.png" alt="">
+                                </div>
+                                <a class="games-btn" href="#">Play Now</a>
+                            </div>
+                        </div>
+                        <!-- single-games end-->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-games">
+                                <h4>Best Reward</h4> 
+                                <div class="games-img">
+                                    <img src="img/games/g2.png" alt="">
+                                </div>
+                                <a class="games-btn" href="#">Play Now</a>
+                            </div>
+                        </div>
+                        <!-- single-games end-->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-games">
+                                <h4>Win Award</h4> 
+                                <div class="games-img">
+                                    <img src="img/games/g3.png" alt="">
+                                </div>
+                                <a class="games-btn" href="#">Play Now</a>
+                            </div>
+                        </div>
+                        <!-- single-games end-->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-games">
+                                <h4>best win</h4> 
+                                <div class="games-img">
+                                    <img src="img/games/g4.png" alt="">
+                                </div>
+                                <a class="games-btn" href="#">Play Now</a>
+                            </div>
+                        </div>
+                        <!-- single-games end-->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-games">
+                               <h4>Pirates of sea</h4> 
+                                <div class="games-img">
+                                    <img src="img/games/g5.png" alt="">
+                                </div>
+                                <a class="games-btn" href="#">Play Now</a>
+                            </div>
+                        </div>
+                        <!-- single-games end-->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-games">
+                               <h4>Hunter fight</h4> 
+                                <div class="games-img">
+                                    <img src="img/games/g6.png" alt="">
+                                </div>
+                                <a class="games-btn" href="#">Play Now</a>
+                            </div>
+                        </div>
+                        <!-- single-games end-->
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- Games area End -->
+        <!-- Start Chips area -->
+        <div class="chips-area bg-color-2 area-padding-2">
+            <div class="container">
+                 <div class="row">
+                    <div class="chips-content">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-chips">
+                                <span class="chips-price">0.21C</span>
+                                <div class="chips-image">
+                                    <img src="img/about/chips1.png" alt="">
+                                </div>
+                                <div class="chips-text">
+                                    <span class="chips-number">100 Coins</span>
+                                    <a class="chips-btn" href="#">Play Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-chips">
+                                <span class="chips-price">0.21C</span>
+                                <div class="chips-image">
+                                    <img src="img/about/chips2.png" alt="">
+                                </div>
+                                <div class="chips-text">
+                                    <span class="chips-number">200 Coins</span>
+                                    <a class="chips-btn" href="#">Play Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-chips">
+                                <span class="chips-price">0.21C</span>
+                                <div class="chips-image">
+                                    <img src="img/about/chips2.png" alt="">
+                                </div>
+                                <div class="chips-text">
+                                    <span class="chips-number">300 Coins</span>
+                                   <a class="chips-btn" href="#">Play Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-chips">
+                                <span class="chips-price">0.21C</span>
+                                <div class="chips-image">
+                                    <img src="img/about/chips3.png" alt="">
+                                </div>
+                                <div class="chips-text">
+                                    <span class="chips-number">300 Coins</span>
+                                    <a class="chips-btn" href="#">Play Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-chips">
+                                <span class="chips-price">0.21C</span>
+                                <div class="chips-image">
+                                    <img src="img/about/chips1.png" alt="">
+                                </div>
+                                <div class="chips-text">
+                                    <span class="chips-number">500 Coins</span>
+                                    <a class="chips-btn" href="#">Play Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-chips">
+                                <span class="chips-price">0.21C</span>
+                                <div class="chips-image">
+                                    <img src="img/about/chips1.png" alt="">
+                                </div>
+                                <div class="chips-text">
+                                    <span class="chips-number">400 Coins</span>
+                                    <a class="chips-btn" href="#">Play Now</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <%--<div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                    <div class="single-card text-center mb-30">
-                        <div class="card-top">
-                            <span>Day - 1</span>
-                            <h4>$ 05.00</h4>
+        </div>
+        <!-- End Achivement area -->
+        <!-- Start How to area -->
+        <div class="how-to-area bg-color area-padding">
+            <div class="container">
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+                            <h3>How to start</h3>
+                            <p>Help agencies to define their new business objectives and then create professional software.</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="all-how">
+                        <!-- single-well end-->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-how first-item">
+                                <div class="how-img">
+                                    <span class="h-number">01</span>
+                                    <a class="big-icon" href="#"><img src="img/about/h1.png" alt=""></a>
+                                </div>
+                                <div class="how-wel">
+                                    <div class="how-content">
+                                        <h4>Get access</h4>
+                                        <p>Aspernatur sit adipisci quaerat unde at neque Redug Lagre dolor sit amet consectetu. Agencies to define their new business objectives and then create</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-bottom">
+                        <!-- single-well end-->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-how ">
+                                <div class="how-img">
+                                    <span class="h-number">02</span>
+                                    <a class="big-icon" href="#"><img src="img/about/h2.png" alt=""></a>
+                                </div>
+                                <div class="how-wel">
+                                    <div class="how-content">
+                                        <h4>Enter games</h4>
+                                        <p>Aspernatur sit adipisci quaerat unde at neque Redug Lagre dolor sit amet consectetu. Agencies to define their new business objectives and then create</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-how thired-item">
+                                <div class="how-img">
+                                   <span class="h-number">03</span>
+                                    <a class="big-icon" href="#"><img src="img/about/h3.png" alt=""></a>
+                                </div>
+                                <div class="how-wel">
+                                    <div class="how-content">
+                                        <h4>Win Award</h4>
+                                        <p>Aspernatur sit adipisci quaerat unde at neque Redug Lagre dolor sit amet consectetu. Agencies to define their new business objectives and then create</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End How to area -->
+        <!--Start payment-history area -->
+        <div class="payment-history-area bg-color fix area-padding">
+            <div class="container">
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+							<h3>Games history</h3>
+							<p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="deposite-content">
+                            <div class="diposite-box">
+                                <div class="deposite-table">
+                                    <table>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Code Id</th>
+                                            <th>Games</th>
+                                            <th>Level</th>
+                                            <th>Reward</th>
+                                            <th>Games ID</th>
+                                        </tr>
+                                        <tr>
+                                           <td><img src="img/icon/m.png" alt="">Ragner Lorth</td>
+                                            <td>EmI-76076</td>
+                                            <td>Redline</td>
+                                            <td>Level-122</td>
+                                            <td>00.83 BTC</td>
+                                            <td>BTC-0.02</td>
+                                        </tr>
+                                        <tr>
+                                           <td><img src="img/icon/m1.png" alt="">Adams jems</td>
+                                            <td>EmI-65342</td>
+                                            <td>Danger war</td>
+                                            <td>Level-132</td>
+                                            <td>00.83 BTC</td>
+                                            <td>BTC-0.02</td>
+                                        </tr>
+                                        <tr>
+                                           <td><img src="img/icon/m2.png" alt="">Admond sayhel</td>
+                                            <td>EmI-20053</td>
+                                            <td>Casino</td>
+                                            <td>Level-153</td>
+                                            <td>00.83 BTC</td>
+                                            <td>BTC-0.02</td>
+                                        </tr>
+                                        <tr>
+                                           <td><img src="img/icon/m3.png" alt="">Jecky chen</td>
+                                            <td>EmI-60754</td>
+                                            <td>Redline</td>
+                                            <td>Level-92</td>
+                                            <td>00.83 BTC</td>
+                                            <td>BTC-0.02</td>
+                                        </tr>
+                                        <tr>
+                                           <td><img src="img/icon/m4.png" alt="">Junior mlind</td>
+                                            <td>EmI-76076</td>
+                                            <td>Casino</td>
+                                            <td>Level-88</td>
+                                            <td>00.83 BTC</td>
+                                            <td>BTC-0.02</td>
+                                        </tr>
+                                        <tr>
+                                           <td><img src="img/icon/m5.png" alt="">Andrew kolin</td>
+                                            <td>EmI-76076</td>
+                                            <td>Dicks game</td>
+                                            <td>Level-184</td>
+                                            <td>00.83 BTC</td>
+                                            <td>BTC-0.02</td>
+                                        </tr>
+                                        <tr>
+                                           <td><img src="img/icon/m6.png" alt="">Anjel loyel</td>
+                                            <td>EmI-76076</td>
+                                            <td>Redline</td>
+                                            <td>Level-102</td>
+                                            <td>00.83 BTC</td>
+                                            <td>BTC-0.02</td>
+                                        </tr>
+                                        <tr>
+                                           <td><img src="img/icon/m7.png" alt="">Jenefer july</td>
+                                            <td>EmI-76076</td>
+                                            <td>Redline</td>
+                                            <td>Level-102</td>
+                                            <td>00.83 BTC</td>
+                                            <td>BTC-0.02</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End payment-history area -->
+        <!-- Start Overview Area -->
+        <div class="overview-area bg-color-2 fix area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="overview-content">
+                            <div class="overview-images">
+                                <img src="img/about/ab.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="overview-text">
+                            <h3>Playing games winning instant Reward and Bonus </h3>
+						    <p>Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define their new business objectives and then create</p>
                             <ul>
-                                <li>Increase traffic 50%</li>
-                                <li>E-mail support</li>
-                                <li>10 Free Optimization</li>
-                                <li>24/7  support</li>
+                               <li><a href="#">Innovation idea latest business tecnology</a></li>
+                                <li><a href="#">Digital content marketing online clients plateform</a></li>
+                                <li><a href="#">Safe secure services for you online email account</a></li>
                             </ul>
-                            <a href="#" class="black-btn">Buy Ticket</a>
-                        </div>
-                    </div>
-                </div>--%>
-                <%--<div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                    <div class="single-card active text-center mb-30">
-                        <div class="card-top">
-                            <span>Day - 1,2,3</span>
-                       <h4 >$ 08.00</h4>
-                            <h4 id="TicketCount" runat="server"></h4>
-                        </div>
-                        <div class="card-bottom">
-                            <%--<ul>
-                                <li>Increase traffic 50%</li>
-                                <li>E-mail support</li>
-                                <li>10 Free Optimization</li>
-                                <li>24/7  support</li>
-                            </ul>
-                            <asp:Button ID="BuyTicket" runat="server" CssClass="btn btn-primary" Text="Buy Now"  />
-                            <a href="#" class="black-btn">Buy Ticket</a>
-                        </div>
-                    </div>
-                </div>--%>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                    <div class="single-card text-center mb-30">
-                        <div class="card-top">
-                            <span>Day - 1,2</span>
-                            <h4 id="TicketCount" runat="server"></h4>
-                            <%--<h4>$ 06.00</h4>--%>
-                        </div>
-                        <div class="card-bottom">
-                            <%--<ul>
-                                <li>Increase traffic 50%</li>
-                                <li>E-mail support</li>
-                                <li>10 Free Optimization</li>
-                                <li>24/7  support</li>
-                            </ul>
-                            <a href="#" class="black-btn">Buy Ticket</a>--%>
-                             <asp:Button ID="BuyTicket" runat="server" CssClass="btn btn-primary" Text="Buy Now"  />
+                            <a class="overview-btn" href="#">Signup today</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Pricing Card End -->
-  
-         </main>
-        </form> 
-   <footer>
-        <div class="footer-area footer-padding">
+        <!-- End Overview Area -->
+        <!-- Start Blog Area-->
+        <div class="blog-area fix bg-color area-padding-2">
             <div class="container">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                       <div class="single-footer-caption mb-50">
-                         <div class="single-footer-caption mb-30">
-                             <div class="footer-tittle">
-                                 <h4>About Us</h4>
-                                 <div class="footer-pera">
-                                     <p>Heaven frucvitful doesn't cover lesser dvsays appear creeping seasons so behold.</p>
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+                            <h3>Games world news</h3>
+							<p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="blog-grid home-blog">
+                        <!-- Start single blog -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-blog">
+                               <div class="blog-image">
+									<a class="image-scale" href="#">
+										<img src="img/blog/b1.jpg" alt="">
+									</a>
+								</div>
+                                <div class="blog-content">
+                                   <div class="blog-meta">
+                                        <span class="admin-type">
+                                            <i class="fa fa-user"></i>
+                                            Admin
+                                        </span>
+                                        <span class="date-type">
+                                            <i class="fa fa-calendar"></i>
+                                            20 july, 2019
+                                        </span>
+                                        <span class="comments-type">
+                                            <i class="fa fa-comment-o"></i>
+                                            13
+                                        </span>
+                                    </div>
+                                    <a href="#">
+                                        <h4>Creative games design clients response is better</h4>
+                                    </a>
                                 </div>
-                             </div>
-                         </div>
-                       </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Contact Info</h4>
-                                <ul>
-                                    <li>
-                                        <p>Address :Your address goes here, your demo address.</p>
-                                    </li>
-                                    <li><a href="#">Phone : +8880 44338899</a></li>
-                                    <li><a href="#">Email : info@colorlib.com</a></li>
-                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Important Link</h4>
-                                <ul>
-                                    <li><a href="#"> View Project</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <%--<li><a href="#">Testimonial</a></li>
-                                    <li><a href="#">Proparties</a></li>--%>
-                                    <li><a href="#">Support</a></li>
-                                </ul>
+                        <!-- End single blog -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-blog">
+                                <div class="blog-content">
+                                   <div class="blog-meta">
+                                       <span class="admin-type">
+                                            <i class="fa fa-user"></i>
+                                            Admin
+                                        </span>
+                                        <span class="date-type">
+                                           <i class="fa fa-calendar"></i>
+                                            13 may, 2018
+                                        </span>
+                                        <span class="comments-type">
+                                            <i class="fa fa-comment-o"></i>
+                                            16
+                                        </span>
+                                    </div>
+                                    <a href="#">
+                                        <h4>Games development is a best work in future world</h4>
+                                    </a>
+                                </div>
+                                <div class="blog-image">
+									<a class="image-scale" href="#">
+										<img src="img/blog/b2.jpg" alt="">
+									</a>
+								</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Newsletter</h4>
-                                <div class="footer-pera footer-pera2">
-                                 <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
-                             </div>
-                             <!-- Form -->
-                            <%-- <div class="footer-form" >
-                                 <div id="mc_embed_signup">
-                                     <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                     method="get" class="subscribe_form relative mail_part">
-                                         <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
-                                         class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                         onblur="this.placeholder = ' Email Address '"/>
-                                         <div class="form-icon">
-                                             <button type="submit" name="submit" id="newsletter-submit"
-                                             class="email_icon newsletter-submit button-contactForm"><img src="assets/img/gallery/form.png" alt=""></button>
-                                         </div>
-                                         <div class="mt-10 info"></div>
-                                     </form>
-                                 </div>
-                             </div>--%>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-blog">
+                                <div class="blog-image">
+									<a class="image-scale" href="#">
+										<img src="img/blog/b3.jpg" alt="">
+									</a>
+								</div>
+                                <div class="blog-content">
+                                   <div class="blog-meta">
+                                        <span class="admin-type">
+                                            <i class="fa fa-user"></i>
+                                            Admin
+                                        </span>
+                                        <span class="date-type">
+                                           <i class="fa fa-calendar"></i>
+                                            24 april, 2019
+                                        </span>
+                                        <span class="comments-type">
+                                            <i class="fa fa-comment-o"></i>
+                                            07
+                                        </span>
+                                    </div>
+                                    <a href="#">
+                                        <h4>You can trust me and playing with best win</h4>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        <!-- End single blog -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-blog">
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span class="admin-type">
+                                            <i class="fa fa-user"></i>
+                                            Admin
+                                        </span>
+                                        <span class="date-type">
+                                           <i class="fa fa-calendar"></i>
+                                            28 june, 2019
+                                        </span>
+                                        <span class="comments-type">
+                                            <i class="fa fa-comment-o"></i>
+                                            32
+                                        </span>
+                                    </div>
+                                    <a href="#">
+                                        <h4>Games playerwant to be benifit pateform games.</h4>
+                                    </a>
+                                </div>
+                                <div class="blog-image">
+									<a class="image-scale" href="#">
+										<img src="img/blog/b4.jpg" alt="">
+									</a>
+								</div> 
+                            </div>
+                        </div>
+                        <!-- End single blog -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-blog">
+                                <div class="blog-image">
+									<a class="image-scale" href="#">
+										<img src="img/blog/b5.jpg" alt="">
+									</a>
+								</div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span class="admin-type">
+                                            <i class="fa fa-user"></i>
+                                            Admin
+                                        </span>
+                                        <span class="date-type">
+                                           <i class="fa fa-calendar"></i>
+                                            28 june, 2019
+                                        </span>
+                                        <span class="comments-type">
+                                            <i class="fa fa-comment-o"></i>
+                                            32
+                                        </span>
+                                    </div>
+                                    <a href="#">
+                                        <h4>Games player man want to be win any game</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- End single blog -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-blog">
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span class="admin-type">
+                                            <i class="fa fa-user"></i>
+                                            Admin
+                                        </span>
+                                        <span class="date-type">
+                                           <i class="fa fa-calendar"></i>
+                                            28 june, 2019
+                                        </span>
+                                        <span class="comments-type">
+                                            <i class="fa fa-comment-o"></i>
+                                            32
+                                        </span>
+                                    </div>
+                                    <a href="#">
+                                        <h4>Games developer must complete thier</h4>
+                                    </a>
+                                </div>
+                                <div class="blog-image">
+									<a class="image-scale" href="#">
+										<img src="img/blog/b6.jpg" alt="">
+									</a>
+								</div>
+                            </div>
+                        </div>
+                        <!-- End single blog -->
                     </div>
                 </div>
-               <!--  -->
-               <div class="row footer-wejed justify-content-between">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <!-- logo -->
-                        <div class="footer-logo mb-20">
-                        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                    <div class="footer-tittle-bottom">
-                        <span>5000+</span>
-                        <p>Talented Hunter</p>
-                    </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <div class="footer-tittle-bottom">
-                            <span>451</span>
-                            <p>Talented Hunter</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <!-- Footer Bottom Tittle -->
-                        <div class="footer-tittle-bottom">
-                            <span>568</span>
-                            <p>Talented Hunter</p>
-                        </div>
-                    </div>
-               </div>
+                <!-- End row -->
             </div>
         </div>
-        <!-- footer-bottom area -->
-        <div class="footer-bottom-area footer-bg">
+        <!-- End Blog Area-->
+        <!-- Start Payments Area -->
+        <div class="payment-area bg-color">
             <div class="container">
-                <div class="footer-border">
-                     <div class="row d-flex justify-content-between align-items-center">
-                         <div class="col-xl-10 col-lg-8 ">
-                             <div class="footer-copy-right">
-                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                             </div>
-                         </div>
-                         <div class="col-xl-2 col-lg-4">
-                             <div class="footer-social f-right">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fas fa-globe"></i></a>
-                                <a href="#"><i class="fab fa-behance"></i></a>
-                             </div>
-                         </div>
-                     </div>
+               <div class="row">
+					<div class="inner-payment">
+					    <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="section-headline text-center">
+                                <h3>Games Partner</h3>
+                                <p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="card-list">
+                                <div class="single-card">
+                                    <a href="#"><img src="img/brand/1.png" alt=""></a>
+                                </div>
+                                <div class="single-card">
+                                    <a href="#"><img src="img/brand/2.png" alt=""></a>
+                                </div>
+                                <div class="single-card">
+                                    <a href="#"><img src="img/brand/3.png" alt=""></a>
+                                </div>
+                                <div class="single-card">
+                                    <a href="#"><img src="img/brand/4.png" alt=""></a>
+                                </div>
+                                <div class="single-card">
+                                    <a href="#"><img src="img/brand/5.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+					</div>
                 </div>
             </div>
         </div>
-        <!-- Footer End-->
-   </footer>
-   
-     <div id="back-top" >
-        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-    </div>
+        <!-- End Payments Area -->
+        <!-- Start Footer Area -->
+        <footer class="footer-1">
+            <div class="footer-area">
+                <div class="container">
+                    <div class="row">
+                       <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-content logo-footer">
+                                <div class="footer-head">
+                                    <div class="footer-logo">
+                                    	<a class="footer-black-logo" href="#"><img src="img/logo/logo2.png" alt=""></a>
+                                    </div>
+                                    <p>
+                                        Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define their new business objectives and then create. Replacing a  maintains the amount of lines. 
+                                    </p>
+                                    <div class="subs-feilds">
+                                        <div class="suscribe-input">
+                                            <input type="email" class="email form-control width-80" id="sus_email" placeholder="Type Email">
+                                            <button type="submit" id="sus_submit" class="add-btn">Subscribe</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end single footer -->
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <h4>Games list</h4>
+                                    <ul class="footer-list">
+                                        <li><a href="#">Dicks game</a></li>
+                                        <li><a href="#">Lobester</a></li>
+                                        <li><a href="#">Gangstar</a></li>
+                                        <li><a href="#">Royal Casino</a></li>
+                                        <li><a href="#">Align fight</a></li>
+                                        <li><a href="#">Black night</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end single footer -->
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <h4>Company</h4>
+                                    <ul class="footer-list">
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Services </a></li>
+                                        <li><a href="#">Events</a></li>
+                                        <li><a href="#">Promotion</a></li>
+                                        <li><a href="#">Transition</a></li>
+                                        <li><a href="#">Social Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end single footer -->
+                        <div class="col-md-2 hidden-sm col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <h4>Payments</h4>
+                                    <ul class="footer-list">
+                                        <li><a href="#">Ripple coin</a></li>
+                                        <li><a href="#">Bitcoin</a></li>
+                                        <li><a href="#">Ethireum</a></li>
+                                        <li><a href="#">Light coin</a></li>
+                                        <li><a href="#">Coin base</a></li>
+                                        <li><a href="#">Skrill card</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end single footer -->
+                        <div class="col-md-2 hidden-sm col-xs-12">
+                             <div class="footer-content last-content">
+                                <div class="footer-head">
+                                    <h4>Support</h4>
+                                    <ul class="footer-list">
+                                        <li><a href="#">Customer Care</a></li>
+                                        <li><a href="#">Live chat</a></li>
+                                        <li><a href="#">Notification</a></li>
+                                        <li><a href="#">Privacy</a></li>
+                                        <li><a href="#">Terms & Condition</a></li>
+                                        <li><a href="#">Contact us </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Footer Bottom Area -->
+            <div class="footer-area-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="copyright">
+                                <p>
+                                    Copyright © 2020
+                                    <a href="#">Playdo</a> All Rights Reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer Bottom Area -->
+        </footer>
+        <!-- End Footer Area -->
+		
+		<!-- all js here -->
 
-    <!-- JS here -->
+		<!-- jquery latest version -->
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- owl.carousel js -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- magnific js -->
+        <script src="js/magnific.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- meanmenu js -->
+        <script src="js/jquery.meanmenu.js"></script>
+		<!-- Form validator js -->
+		<script src="js/form-validator.min.js"></script>
+		<!-- plugins js -->
+		<script src="js/plugins.js"></script>
+		<!-- main js -->
+		<script src="js/main.js"></script>
 
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Jquery, Popper, Bootstrap -->
-   
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
 
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <!-- One Page, Animated-HeadLin -->
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
 
-    <!-- Date Picker -->
-    <script src="./assets/js/gijgo.min.js"></script>
-    <!-- Nice-select, sticky -->
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
-    
-    <!-- counter , waypoint -->
-    <script src="./assets/js/jquery.counterup.min.js"></script>
-    <script src="./assets/js/waypoints.min.js"></script>
-    <script src="./assets/js/jquery.countdown.min.js"></script>
-    <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
-    
-    <!-- Jquery Plugins, main Jquery -->	
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
     
 </body>
 </html>
