@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
-
+    	<script src="js/vendor/jquery-1.12.4.min.js"></script>
     <!-- modernizr css -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script>                 
@@ -46,30 +46,29 @@
         //}
         $(document).ready(function () {
 
-            //  window.menubar.visible = false;
-            // window.toolbar.visible = false;
-            $("#Counter").Hide();
+            $("#Account").Hide();
+            //$("#Counter").Hide();
 
         });
     </script>
 
 
 </head>
-<body>
-   
+<body> 
   
       
 		 <div id="preloader"></div>
         <header class="header-one">
+             <form runat="server">
             <!-- Start top bar -->
-            <div class="topbar-area">
+            <%--<div class="topbar-area">
                 <div class="container">
                     <div class="row">
                         <div class=" col-md-8 col-sm-8 col-xs-12">
                             <div class="topbar-left">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-envelope"></i> info@playdo4.com</a></li>
-                                    <li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>
+                                    <%--<li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>-
                                 </ul>  
                             </div>
                         </div>
@@ -83,14 +82,14 @@
                                            <li><a href="#"><img src="img/icon/w4.png" alt="">Français</a>
                                            <li><a href="#"><img src="img/icon/w5.png" alt="">العربية</a>
                                        </ul>
-                                    </li>--%>
-                                    <li><a id="log" runat="server" href="Login.aspx"><img src="img/icon/login.png" alt=""/>Login</a> </li>
+                                    </li>
+                                    <li><a id="log" runat="server" href="#" onclick="BtnLogin()"><img runat="server" src="img/icon/login.png" alt=""/>Login</a> </li>
                                 </ul>
 							</div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--%>
             <!-- End top bar -->
             <!-- header-area start -->
             <div id="sticker" class="header-area header-area-2 hidden-xs">
@@ -109,8 +108,16 @@
                         <div class="col-md-9 col-sm-9">
                             <div class="header-right-link">
                                 <!-- search option end -->
-								<a class="s-menu" href="Login.aspx">Join now</a>
+                                  <%-- <asp:Button ID="btnLogin" runat="server" Text="Login"  CssClass="s-menu" OnClick="btnLogin_Click" />--%>
+								<a id="Log" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>
+                               
                             </div>
+                           <%-- <div class="header-right-link">
+                                <!-- search option end -->
+                                <asp:Button ID="BtnLogin" runat="server"  Text="Login"  CssClass="slide-btn login-btn" />
+								<%--<a id="A1" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>-
+                                
+                            </div>--%>
                             <!-- mainmenu start -->
                             <nav class="navbar navbar-default">
                                 <div class="collapse navbar-collapse" id="navbar-example">
@@ -123,15 +130,15 @@
                                                     <li><a href="index-3.html">Home 03</a></li>
                                                 </ul>--%>
                                             </li>
-                                            <li><a class="pagess" href="play.html">Play</a></li>
+                                            <%--<li><a class="pagess" href="play.html">Play</a></li>
                                             <li><a class="pagess" href="#">Games</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="games.html">All Games</a></li>
                                                     <li><a href="games-details.html">Games Details</a></li>
                                                 </ul>
-                                            </li>
-                                            <li><a class="pagess" href="lottery.html">Lottery</a></li>
-                                            <li><a class="pagess" href="#">Pages</a>
+                                            </li>--%>
+                                            <li><a class="pagess" href="lottery.aspx">Lottery</a></li>
+                                           <%-- <li><a class="pagess" href="#">Pages</a>
                                                 <ul class="sub-menu">
                                                    <li><a href="about.html">About</a></li>
                                                     <li><a href="team.html">team</a></li>
@@ -142,15 +149,15 @@
                                                     <li><a href="error.html">Error</a></li>
                                                     <li><a href="terms.html">terms & Conditions</a></li>
                                                 </ul>
-                                            </li>
-                                            <li><a class="pagess" href="#">Blog</a>
+                                            </li>--%>
+                                           <%-- <li><a class="pagess" href="#">Blog</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="blog.html">Blog grid</a></li>
                                                     <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
                                                     <li><a href="blog-details.html">Blog Details</a></li>
                                                 </ul>
-                                            </li>
-                                            <li><a href="contact.html">contacts</a></li>
+                                            </li>--%>
+                                           <%-- <li><a href="contact.html">contacts</a></li>--%>
                                         </ul>
                                     </div>
                                 </div>
@@ -214,13 +221,14 @@
                     </div>
                 </div>
             </div>
-            <!-- mobile-menu-area end -->		
+            <!-- mobile-menu-area end -->	
+              </form> 
         </header>
         <!-- header end -->
         <!-- Start Slider Area -->
-        <div class="intro-area intro-area-2">
+       <%-- <div class="intro-area intro-area-2">
             <div class="bg-wrapper">
-            	<img src="img/background/slide-bg.png" alt="">
+                <img src="img/background/casino-table-in-close-up-view-4677402.jpg" alt="">                
             </div>
 			<div class="intro-content">
 				<div class="slider-content">
@@ -246,6 +254,46 @@
 					</div>
 				</div>
 			</div>
+        </div>--%>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+  
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+ 
+            <div class="carousel-inner" role="listbox" >
+                <div class="item active">
+                    <img src="img/background/casino-table-in-close-up-view-4677402.jpg" alt="..."/>
+                    <div class="carousel-caption">
+                        <h2 class="title2">Playing online games<span class="color"> Win Reward </span></h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/background/slide2.jpg" alt="..."/>
+                    <div class="carousel-caption">
+                        <h2 class="title2">Playing online games1<span class="color"> Win Reward 1</span></h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/background/slide2.jpg" alt="..."/>
+                    <div class="carousel-caption">
+                        <h2 class="title2">Playing online games2<span class="color"> Win Reward 1</span></h2>
+                    </div>
+                </div>
+            
+            </div>
+
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="icon-prev" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="icon-next" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
         <!-- End Slider Area -->
         <!-- Start Achivement area -->
@@ -364,7 +412,7 @@
         </div>
         <!-- End About Area -->
         <!-- Start Games Area -->
-        <div class="games-area games-area-2  bg-color area-padding-2">
+        <%--<div class="games-area games-area-2  bg-color area-padding-2">
             <div class="container">
               <div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
@@ -440,10 +488,10 @@
 					</div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- Games area End -->
         <!-- Start Chips area -->
-        <div class="chips-area bg-color-2 area-padding-2">
+       <%-- <div class="chips-area bg-color-2 area-padding-2">
             <div class="container">
                  <div class="row">
                     <div class="chips-content">
@@ -528,7 +576,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- End Achivement area -->
         <!-- Start How to area -->
         <div class="how-to-area bg-color area-padding">
@@ -692,7 +740,7 @@
         </div>
         <!-- End payment-history area -->
         <!-- Start Overview Area -->
-        <div class="overview-area bg-color-2 fix area-padding">
+        <%--<div class="overview-area bg-color-2 fix area-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -716,10 +764,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- End Overview Area -->
         <!-- Start Blog Area-->
-        <div class="blog-area fix bg-color area-padding-2">
+        <%--<div class="blog-area fix bg-color area-padding-2">
             <div class="container">
                 <div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
@@ -909,10 +957,10 @@
                 </div>
                 <!-- End row -->
             </div>
-        </div>
+        </div>--%>
         <!-- End Blog Area-->
         <!-- Start Payments Area -->
-        <div class="payment-area bg-color">
+        <%--<div class="payment-area bg-color">
             <div class="container">
                <div class="row">
 					<div class="inner-payment">
@@ -944,7 +992,7 @@
 					</div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- End Payments Area -->
         <!-- Start Footer Area -->
         <footer class="footer-1">
@@ -975,12 +1023,14 @@
                                 <div class="footer-head">
                                     <h4>Games list</h4>
                                     <ul class="footer-list">
-                                        <li><a href="#">Dicks game</a></li>
+                                        <li><a href="#">Lottery</a></li>
+
+                                       <%-- <li><a href="#">Dicks game</a></li>
                                         <li><a href="#">Lobester</a></li>
                                         <li><a href="#">Gangstar</a></li>
                                         <li><a href="#">Royal Casino</a></li>
                                         <li><a href="#">Align fight</a></li>
-                                        <li><a href="#">Black night</a></li>
+                                        <li><a href="#">Black night</a></li>--%>
                                     </ul>
                                 </div>
                             </div>
@@ -993,16 +1043,16 @@
                                     <ul class="footer-list">
                                         <li><a href="#">About us</a></li>
                                         <li><a href="#">Services </a></li>
-                                        <li><a href="#">Events</a></li>
+                                       <%-- <li><a href="#">Events</a></li>
                                         <li><a href="#">Promotion</a></li>
                                         <li><a href="#">Transition</a></li>
-                                        <li><a href="#">Social Media</a></li>
+                                        <li><a href="#">Social Media</a></li>--%>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <!-- end single footer -->
-                        <div class="col-md-2 hidden-sm col-xs-12">
+                        <%--<div class="col-md-2 hidden-sm col-xs-12">
                             <div class="footer-content">
                                 <div class="footer-head">
                                     <h4>Payments</h4>
@@ -1016,7 +1066,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <!-- end single footer -->
                         <div class="col-md-2 hidden-sm col-xs-12">
                              <div class="footer-content last-content">
@@ -1024,8 +1074,8 @@
                                     <h4>Support</h4>
                                     <ul class="footer-list">
                                         <li><a href="#">Customer Care</a></li>
-                                        <li><a href="#">Live chat</a></li>
-                                        <li><a href="#">Notification</a></li>
+                                      <%--  <li><a href="#">Live chat</a></li>
+                                        <li><a href="#">Notification</a></li>--%>
                                         <li><a href="#">Privacy</a></li>
                                         <li><a href="#">Terms & Condition</a></li>
                                         <li><a href="#">Contact us </a></li>

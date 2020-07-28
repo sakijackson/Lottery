@@ -9,62 +9,7 @@ namespace lottery
 {
     public static class DBCon
     {
-       static SqlConnection con;
-        public static bool CheckCon()
-        {
-           con = new SqlConnection(ConfigurationManager.ConnectionStrings["LotteryDBCon"].ConnectionString);
-           if(con.State==System.Data.ConnectionState.Closed)
-            {
-                con.Open();
-                return true;
-            }
-           else
-            {                
-                return true;
-            }
-        }
-       
-        public static bool ExecuteQry(string Qry)
-        {
-            SqlCommand cmd = new SqlCommand(Qry, con);
-            cmd.ExecuteNonQuery();
-            return true;
-        }
-        public static SqlDataReader DataRead(string Qry)
-        {
-            SqlCommand cmd = new SqlCommand(Qry, con);
-            SqlDataReader sdr = cmd.ExecuteReader();
-            if (sdr.Read())
-            {
-                return sdr;
-
-            }
-            return sdr;
-        }
-        public static bool VerifyMail(string To)
-        {
-            try
-            {
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("");
-                mail.Subject = "";
-                mail.Body = "";
-                SmtpClient smtp = new SmtpClient("");
-                smtp.Port =587;
-                smtp.Credentials = new System.Net.NetworkCredential("UserName", "Password");
-                smtp.EnableSsl = true;
-                smtp.Send(mail);
-                return true;
-            }
-            catch(Exception ex)
-            {
-                return false;
-            }
-            
-
-
-        }
-
+        
         public static string GenerateRandomOTP(int iOTPLength)
         {
             string [] Digits = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };

@@ -228,7 +228,7 @@ div#preloader {
 	padding: 100px 0px;
 }
 .area-padding-2{
-    padding: 100px 0px 70px;
+    padding: 200px 0px 70px;
 }
 .area-padding-3{
     padding: 70px 0px 100px;
@@ -1002,11 +1002,24 @@ div#preloader {
 .deposite-content {
     position: relative;
 }
+.deposite-content1{
+    position: relative;
+}
 .deposite-content table {
   border-collapse: collapse;
   width: 100%;
 }
+.deposite-content1 table {
+  border-collapse: collapse;
+  width: 100%;
+}
 .deposite-content th {
+    text-align: left;
+    padding: 8px 10px 8px 30px;
+    height: 80px;
+    text-transform: uppercase;
+}
+.deposite-content1 th {
     text-align: left;
     padding: 8px 10px 8px 30px;
     height: 80px;
@@ -1017,10 +1030,24 @@ div#preloader {
     padding: 8px 10px 8px 30px;
     height: 80px;
 }
+.deposite-content1 td{
+    text-align: left;
+    padding: 8px 10px 8px 30px;
+    height: 80px;
+}
 .deposite-content tr:nth-child(even) {
   background-color: #171627;
 }
+.deposite-content1 tr:nth-child(even) {
+  background-color: #171627;
+}
 .diposite-box {
+    width: 100%;
+    margin: 0 auto;
+    background: #26253f;
+    position: relative;
+}
+.diposite-box1 {
     width: 100%;
     margin: 0 auto;
     background: #26253f;
@@ -1044,7 +1071,12 @@ div#preloader {
     border-radius: 3px;
     line-height: 32px;
 }
+
 .deposite-table td img {
+    margin-right: 15px;
+    border-radius: 50%;
+}
+.deposite-table1 td img {
     margin-right: 15px;
     border-radius: 50%;
 }

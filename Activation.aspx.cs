@@ -7,9 +7,13 @@ using System.Web.UI.WebControls;
 
 public partial class Activation : System.Web.UI.Page
 {
+    MailService.WebServiceResponse wsr;
+    MailService.Mail ms;
+   
     protected void Page_Load(object sender, EventArgs e)
     {
-        MailService.Mail ms = new MailService.Mail();
+         ms = new MailService.Mail();
+        wsr = new MailService.WebServiceResponse();
         string activationCode;
         try
         {
@@ -24,14 +28,16 @@ public partial class Activation : System.Web.UI.Page
                     if(!string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["ActivationCode"]))
                     {
                         activationCode = HttpContext.Current.Request.QueryString["ActivationCode"];
-                        if (ms.verifyActivationEmail(activationCode))
+                        wsr = ms.VerifyActivationEmail(activationCode);
+                        
+                        if (wsr.Result =="1")
                         {
                             Response.Redirect("Login.aspx", false);
                             Context.ApplicationInstance.CompleteRequest();
                         }
                         else
                         {
-                            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Account Already Activated');", true);
+                            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('"+wsr.Error+"');", true);
                         }
                     }
                     else

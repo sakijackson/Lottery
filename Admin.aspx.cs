@@ -14,33 +14,48 @@ public partial class Admin : System.Web.UI.Page
     SqlDataAdapter Sqlda;
     String RandomOTP;
     StringBuilder htmlTable = new StringBuilder();
-    LotteryWebService.DBService lws = new LotteryWebService.DBService();
+    LotteryWebService.DBService dbService;
+    LotteryWebService.UserInfo ui;
+    
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        MultiView1.ActiveViewIndex = 0;       
-        GetTicketInfo();           
-      
+        try
+        {
+            dbService = new LotteryWebService.DBService();             
+            GetTicketInfo();
+            GetUsersInfo();
+        }
+        catch (Exception ex)
+        {
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        }
+
     }
 
     protected void BtnAddTicket_Click(object sender, EventArgs e)
     {
+        LotteryWebService.DBService lws = new LotteryWebService.DBService();
+        LotteryWebService.WebServiceResponse wsr = new LotteryWebService.WebServiceResponse();
         try
         {
-          
-            //if (lws.InsertTicketInfo(TicketNo.Text.Trim(), int.Parse(TicketPrice.Text.Trim()), int.Parse(PriceAmount.Text.Trim()), DateTime.Parse(DateTime.Now.ToString("yyy-MM-dd")), DateTime.Parse(CloseDate.Text), DateTime.Parse(DrawDate.Text), Status.SelectedItem.Text))
-            //{
-            //    Response.Redirect("Admin.aspx", false);
-            //    Context.ApplicationInstance.CompleteRequest();
-            //}
+            wsr = lws.InsertTicketInfo(TicketNo.Value.Trim(), int.Parse(TicketPrice.Value.Trim()), int.Parse(PriceAmount.Value.Trim()), DateTime.Parse(DateTime.Now.ToString("yyy-MM-dd")), DateTime.Parse(CloseDate.Value), DateTime.Parse(DrawDate.Value), Status.SelectedItem.Text);
+
+
+            if (wsr.Result=="1")
+            {
+                Response.Redirect("Admin.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error+ "');", true);
+            }
 
         }
 
-
-
         catch (Exception ex)
         {
-
             //string message = string.Format("Message: {0}", ex.Message);
            // int st = message.IndexOf("System.Exception:");
            // int en = message.IndexOf(".\n");
@@ -48,22 +63,7 @@ public partial class Admin : System.Web.UI.Page
         }
         
        
-    }
-   public void Clear()
-    {
-        TicketNo.Text = "";
-        TicketPrice.Text = "";
-        PriceAmount.Text = "";
-       //foreach(var textbox in Page.Controls)
-       // {
-       //     if(textbox is TextBox)
-       //     {
-       //        ( (TextBox)textbox).Text = "";
-       //     }
-      
-       // }
-    }
-
+    }   
     public void GetTicketInfo()
     {
         try
@@ -89,6 +89,71 @@ public partial class Admin : System.Web.UI.Page
         catch(Exception ex)
         {
             Response.Write("script<alert('"+ex.Message+"')</script>");
+        }
+    }
+    public void GetUsersInfo()
+    {
+        try
+        {
+            ui = new LotteryWebService.UserInfo();
+            DataSet ds = dbService.GetUsersInfo();
+            if (ds.Tables["Response"].Rows[0]["Status"].ToString()=="1")
+            {
+                GridView2.DataSource = ds.Tables["UsersInfo"];
+                GridView2.DataBind();
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ds.Tables["Response"].Rows[0]["Error"].ToString() + "');", true);
+            }
+           
+
+
+        }
+        catch(Exception ex)
+        {
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        }
+    }
+    public void GetTransactionsInfo()
+    {
+        try
+        {
+            ui = new LotteryWebService.UserInfo();
+            DataSet ds = dbService.GetUsersInfo();
+            if (ds.Tables["Response"].Rows[0]["Status"].ToString() == "1")
+            {
+                GridView2.DataSource = ds.Tables["UsersInfo"];
+                GridView2.DataBind();
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ds.Tables["Response"].Rows[0]["Error"].ToString() + "');", true);
+            }
+
+
+
+        }
+        catch (Exception ex)
+        {
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        }
+    }
+
+    protected void BtnLogout_Click(object sender, EventArgs e)
+    {
+        try
+        {
+           
+
+                Response.Redirect("Home.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+           
+          
+        }
+        catch (Exception ex)
+        {
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
     }
 }

@@ -5,21 +5,69 @@ public partial class Home : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
-        if (Session["UserName"] != null)
+        try
         {
-            log.InnerHtml = "Logout";
+            if(!IsPostBack)
+            {
+                if (!string.IsNullOrEmpty(Session["UserId"] as string))
+                {
+                    Response.Redirect("UserHome.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
 
 
     }
+    protected void BtnLogin(object sender,EventArgs e)
+    {
+        try
+        {
+            //if (log.InnerHtml == "Logout")
+            //{
+            //    Session.Abandon();
+            //}
+            //else
+            //{
+            //    Response.Redirect("Login.aspx", false);
+            //    Context.ApplicationInstance.CompleteRequest();
+            //}
+        }
+        catch (Exception ex)
+        {
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        }
+
+    }
+
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        //try
+        //{
+        //    if (btnLogin.Text== "Signout")
+        //    {
+        //        Session.Abandon();  
+        //        Session.RemoveAll();
+        //        Response.Redirect("Home.aspx", false);
+        //        Context.ApplicationInstance.CompleteRequest();
+        //    }
+        //    else
+        //    {
+        //        Response.Redirect("Login.aspx", false);
+        //        Context.ApplicationInstance.CompleteRequest();
+        //    }
+        //}
+        //catch (Exception ex)
+        //{
+        //    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        //}
+    }
 }
-//LotteryWebService.DBService LWS = new LotteryWebService.DBService();
-// string Count = LWS.GetTicketCount("1");
-//if(Count!="No Ticket")
-//{
-//TicketCount.InnerText = Count + "/" + 10 ;
-//}
+
 
 //TicketCount.InnerText = "hello";
 // lblDate.Text = strValue;

@@ -40,7 +40,6 @@
                                     <div class="row">
                                         <form id="contactForm" runat="server" class="log-form">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <%--<asp:TextBox ID="UserId" runat="server" CssClass="form-control" required="true" placeholder="Username"  required data-error="Please enter your name" ></asp:TextBox>--%>
                                                 <input type="text" id="UserId" runat="server" class="form-control" placeholder="User ID" required="required" autocomplete="off"  data-error-messsage="Please enter your name"/>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -48,10 +47,10 @@
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                                                 <div class="check-group flexbox">
-                                                    <label class="check-box">
+                                                    <%--<label class="check-box">
                                                         <input type="checkbox" class="check-box-input" checked="checked"/>
                                                         <span class="remember-text">Remember me</span>
-                                                    </label>
+                                                    </label>--%>
 
                                                     <a class="text-muted" href="#">Forgot password?</a>
                                                 </div>

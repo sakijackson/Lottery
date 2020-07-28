@@ -8,37 +8,38 @@ using System.Web.UI.WebControls;
 public partial class Login : System.Web.UI.Page
 {
     LotteryWebService.DBService lws;
+    LotteryWebService.WebServiceResponse wsr;
     protected void Page_Load(object sender, EventArgs e)
     {
-        lws = new LotteryWebService.DBService();
-       
-    }
 
+        lws = new LotteryWebService.DBService();
+        wsr = new LotteryWebService.WebServiceResponse();
+    }
 
 
     protected void BtnLogin_Click(object sender, EventArgs e)
     {
         try
-        {
-            
-            string result = lws.verifyUserLogin(UserId.Value.Trim(), Password.Value.Trim());
-            if (result != "invalid user")
+        {                       
+            wsr = lws.VerifyUserLogin(UserId.Value.Trim(), Password.Value.Trim());
+            if (wsr.Result != "0")
             {
-                Session["UserName"] = result;
-                Response.Redirect("Home.aspx", false);
+                Session["UserId"] = wsr.Result;
+                Response.Redirect("UserHome.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();                
 
             }
             else
             {
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('invalid UserName/Password');", true);
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('UserId or Password is Invalid');", true);
             }
                      
                        
         }
-        catch (Exception ex)
+        catch 
         {
-            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message + "');", true);
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error + "');", true);
+            //ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message + "');", true);
         }
     }
 }

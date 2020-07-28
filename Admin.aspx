@@ -4,153 +4,207 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="description" content=""/>
+    <meta charset="utf-8"/> 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="manifest" href="site.webmanifest"/>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico"/>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="assets/css/slicknav.css"/>
-    <link rel="stylesheet" href="assets/css/flaticon.css"/>
-    <link rel="stylesheet" href="assets/css/gijgo.css"/>
-	<link rel="stylesheet" href="assets/css/animate.min.css"/>
-	<link rel="stylesheet" href="assets/css/magnific-popup.css"/>
-	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css"/>
-	<link rel="stylesheet" href="assets/css/themify-icons.css"/>
-	<link rel="stylesheet" href="assets/css/slick.css"/>
-	<link rel="stylesheet" href="assets/css/nice-select.css"/>
-	<link rel="stylesheet" href="assets/css/style.css"/>   
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-     <%--<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.min.css" rel="stylesheet" type="text/css" />--%>
-     <%--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/js/footable.min.js"></script>--%>
+    <title>Admin | Playdo</title>
+       <link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
+
+    <!-- all css here -->
+
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- magnific css -->
+    <link rel="stylesheet" href="css/magnific.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- jquery latest version -->
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script type="text/javascript" >
-        $(document).ready(function () {           
+        $(document).ready(function () { 
+            $("#ViewTicket").hide();  
+            $("#ViewUsers").hide(); 
             $("#TicketPrice,#PriceAmount").on("keypress keyup", function (event) {               
                 $(this).val($(this).val().replace(/[^0-9\.+]/, ''));
                 if ((event.which < 48 || event.which > 57)) {
                     event.preventDefault();
                 }
-            });          
-        //    $('[id*=GridView1]').footable();
-            $("#ViewTicket").hide();   
+            }); 
+             
             $("#View").click(function () {
                 $("#AddTicket").hide();
+                $("#ViewUsers").hide();
                 $("#ViewTicket").show();
             });
             $("#Add").click(function () {
                 $("#ViewTicket").hide();
+                $("#ViewUsers").hide();
                 $("#AddTicket").show();
-           });
+            });
+            $("#UsersView").click(function () {
+                $("#ViewTicket").hide();
+                $("#AddTicket").hide(); 
+                $("#ViewUsers").show();
+            });
         });
     </script>    
-    <title>Admin Home</title>  
+    
 </head>
 <body>
-     <form id="form1" runat="server" autocomplete="off">
+     <form id="form1" runat="server" autocomplete="off" class="log-form" >
     <header>
-          <div class="header-area">
-        <div class="main-header header-sticky">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <!-- Logo -->
-                    <div class="col-xl-2 col-lg-2 col-md-1">
-                        <div class="logo" style="font-size:30px" id="d">
-                            Megalot
-                            <%--<a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>--%>
+         <div id="sticker" class="header-area header-area-2 hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <!-- logo start -->
+                        <div class="col-md-3 col-sm-3">
+                            <div class="logo">
+                                <!-- Brand -->
+                                <a class="navbar-brand " href="Home.aspx">
+                                    <img src="img/logo/logo2.png" alt=""/>
+                                </a>
+                            </div>
+                            <!-- logo end -->
                         </div>
-                    </div>
-                    <div class="col-xl-10 col-lg-10 col-md-10">
-                        <div class="menu-main d-flex align-items-center justify-content-end">
-                            <!-- Main-menu -->
-                            <div class="main-menu f-right d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">                                       
-                                      <li><a href="#">Ticket</a>
-                                            <ul class="submenu">
-                                                <li id="Add" runat="server"><a href="#">Add</a></li>
-                                                <li id="View"><a href="#">View</a></li>
+                        <div class="col-md-9 col-sm-9">
+                            <div class="header-right-link">
+                                <!-- search option end -->
+                               
+                                 <asp:Button ID="BtnLogout" runat="server" class="ticket-btn" Text="Logout" OnClick="BtnLogout_Click"   ></asp:Button>
+                               
+                                <%--<asp:LinkButton runat="server" id="Logout" CssClass="s-menu" onclick="BtnLogout_Click" >Logout</asp:LinkButton>--%>
+								<%--<a class="s-menu"  href="#" >Logout</a>--%>
+                            </div>
+                            <!-- mainmenu start -->
+                            <nav class="navbar navbar-default">
+                                <div class="collapse navbar-collapse" id="navbar-example">
+                                    <div class="main-menu">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <%--<li><a class="pagess" href="#">Home</a>
                                                
-                                            </ul>
-                                        </li>                                        
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <asp:Button ID="BtnLogout" runat="server" CssClass="btn btn-primary" Text="Logout" ></asp:Button>
-                                <%--<a href="Login.aspx" class="btn header-btn">logout</a>--%>
-                            </div>
+                                            </li>--%>
+                                            
+                                         <%--   <li><a class="pagess" href="#">Games</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="#">All Games</a></li>
+                                                    <li><a href="#">Games Details</a></li>
+                                                </ul>
+                                            </li>                       --%>                     
+                                            <li><a class="pagess" href="#">Lottery</a>
+                                                <ul class="sub-menu">
+                                                   <li><a id="Add" runat="server" href="#">Add Ticket</a></li>
+                                                    <li><a id="View" runat="server" href="#">view</a></li>
+                                                    
+                                                </ul>
+                                            </li>
+                                            <li><a class="pagess" href="#">User</a>
+                                                <ul class="sub-menu">
+                                                    <li><a id="UsersView" runat="server" href="#">view</a></li>
+                                                    
+                                                </ul>
+                                            </li>
+                                           <%-- <li><a class="pagess" href="#">Blog</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="blog.html">Blog grid</a></li>
+                                                    <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">contacts</a></li>--%>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            <!-- mainmenu end -->
                         </div>
-                    </div>   
-                    <!-- Mobile Menu -->
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-     </header>
-   
-        <asp:MultiView ID="MultiView1" runat="server">  
-             
-            <asp:View ID="Ticket" runat="server">
-                  <div id="AddTicket" style="padding-left:30%;padding-right:30%;margin-top:10%">
-                <div style="text-align:center">Add Ticket Details</div>
-                 <table class="table-borderless" cellpadding="20" cellspacing="0" style="width:100%;">
-               <tr>                  
-                   <td >
-                       Ticket No
-                       <br />
-                       <asp:TextBox ID="TicketNo" runat="server" CssClass="form-control" required="true" placeholder="Ticket No" ></asp:TextBox>
-                   </td>                               
-                   <td >
-                       Ticket Price
-                       <br/>
-                       <asp:TextBox ID="TicketPrice" runat="server" CssClass="form-control" placeholder="Ticket Price" required="true" MaxLength="8" ></asp:TextBox>
-                   </td>
-               </tr>
-                      <tr>                  
-                   <td >
-                       Price Amount
-                       <br />
-                       <asp:TextBox ID="PriceAmount" runat="server" CssClass="form-control" placeholder="PriceAmount" required="true" MaxLength="8" ></asp:TextBox>
-               
-                       </td>                               
-                   <td >
-                       Close Date
-                       <br />
-                       <asp:TextBox ID="CloseDate" runat="server" TextMode="Date" CssClass="form-control" required="true"></asp:TextBox>
-                   </td>
-               </tr>
-                      <tr>                  
-                   <td >
-                       Draw Date
-                       <br/>
-                       <asp:TextBox ID="DrawDate" runat="server" TextMode="Date" CssClass="form-control" required="true"></asp:TextBox>
-                   </td>                           
-                   <td >
-                       Status
-                       <br />
-                       <asp:DropDownList ID="Status" runat="server" CssClass="form-control" required="true">
-                           <asp:ListItem>Open</asp:ListItem>
-                           <asp:ListItem>Close</asp:ListItem>
-                       </asp:DropDownList>            
+            </div>                                       
+          
+                 <%--<div class="login-area area-padding fix">--%>
+                <div id="AddTicket" style="padding: 100px 0px;position: relative;">
+          <div class="login-overlay"></div>
+            <div class="table">
+                <div class="table-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div  class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
+                                <div class="login-form">
+                                    <h4 class="login-title text-center">Add Ticket</h4>
+                                    <div class="row">
+                                        <%--<form id="contactForm" runat="server" class="log-form">--%>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">                                               
+                                                <input type="text" id="TicketNo" runat="server" class="form-control" placeholder="Ticket No" required="required" autocomplete="off"  data-error-messsage="Please enter ticket no"/>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                 
+                                                <input type="text" id="TicketPrice" runat="server" class="form-control" placeholder="Ticket Price" autocomplete="off" required="required" maxlength="8"  data-error="Please enter ticket price"/>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                 
+                                                <input type="text" id="PriceAmount" runat="server" class="form-control" placeholder="PriceAmount" autocomplete="off" required="required" maxlength="8"  data-error="Please enter price amount"/>
+                                            </div>
+                                               <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <%--<asp:TextBox ID="CloseDate" runat="server" TextMode="Date" CssClass="form-control" required="true"></asp:TextBox>--%>
+                                                 
+                                                <input type="date" id="CloseDate" runat="server" class="form-control" placeholder="PriceAmount" autocomplete="off" required="required"  data-error="Please enter price amount"/>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                 
+                                                  <%--<asp:TextBox ID="DrawDate" runat="server" TextMode="Date" CssClass="form-control" required="true"></asp:TextBox>--%>
+                                                <input type="date" id="DrawDate" runat="server" class="form-control" placeholder="PriceAmount" autocomplete="off" required="required"  data-error="Please enter price amount"/>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                  <asp:DropDownList ID="Status" runat="server" CssClass="form-control" required="true">
+                                                     <asp:ListItem>Open</asp:ListItem>
+                                                     <asp:ListItem>Close</asp:ListItem>
+                                                     </asp:DropDownList>            
                        
-                   </td>
-               </tr>                     
-             
-               <tr>
-                   <td colspan="2" style="text-align:center">
-                        <asp:Button ID="BtnAddTicket" runat="server"  Text="Add" CssClass="btn btn-primary" OnClick="BtnAddTicket_Click" />
-                   </td>
-               </tr>                     
-           </table> 
-                       </div>
-                       <div id="ViewTicket" style="padding-left:25%;padding-right:23%;margin-top:10%">
-                <div style="text-align:center">Ticket Details</div>
-                           <div class="table-responsive" >
+                                            </div>
+                                            
+                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                                <asp:Button ID="BtnAddTicket" runat="server"  Text="Add" CssClass="slide-btn login-btn" OnClick="BtnAddTicket_Click" />
+                                                 
+                                                <%--<button type="submit" runat="server" id="submit" class="slide-btn login-btn">Login</button>--%>
+                                                <div id="msgSubmit" class="h3 text-center hidden"></div> 
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            
+                                        <%--</form>--%> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                </div>
+        </div>
+
+                    <div id="ViewTicket" style="padding: 100px 0px;position: relative;">
+          <div class="login-overlay"></div>
+            <div class="table">
+                <div class="table-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div  class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
+                                <%--<div class="login-form">--%>
+                                    <h4 class="login-title text-center">Tickets</h4>
+                                    <div class="row">
+                                       
                          
                 <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled"  CssClass="table table-borderless" >
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
@@ -225,13 +279,181 @@
             <SortedAscendingHeaderStyle BackColor="#506C8C" />
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-        </asp:GridView>
-      
-               </div>
-                       </div>
-            </asp:View>
+        </asp:GridView>              
+                                    <%--</div>--%>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                </div>
+        </div>
+
+        <div id="ViewUsers" style="padding: 100px 0px;position: relative;">
+          <div class="login-overlay"></div>
+            <div class="table">
+                <div class="table-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div  class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
+                                <%--<div class="login-form">--%>
+                                    <h4 class="login-title text-center">Users List</h4>
+                                    <div class="row">                                       
+                         
+                <asp:GridView ID="GridView2" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled"  CssClass="table table-borderless" >
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <Columns>
+                 <asp:TemplateField HeaderText="Fisrt Name"> 
+            
+                          
+                            <ItemTemplate>  
+                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("FirstName") %>'>  
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField> 
+                 <asp:TemplateField HeaderText="Last Name"> 
+            
+                          
+                            <ItemTemplate>  
+                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("LastName") %>'>  
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField> 
+                <asp:TemplateField HeaderText="PhoneNumber">             
+                          
+                            <ItemTemplate>  
+                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("PhoneNumber") %>'>  
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField> 
+
+                <asp:TemplateField HeaderText="Email"> 
+                                       
+                            <ItemTemplate>  
+                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("Email") %>'>  
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField> 
+                <asp:TemplateField HeaderText="Password"> 
+                                       
+                            <ItemTemplate>  
+                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("Password") %>'>  
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField> 
+
+                <asp:TemplateField HeaderText="DateOfBirth"> 
+                                       
+                            <ItemTemplate>  
+                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("DateOfBirth","{0:dd/MM/yyyy}") %>'>  
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField> 
+
+                <asp:TemplateField HeaderText="Nationality"> 
+                                        
+                           
+                            <ItemTemplate>  
+                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("Nationality") %>'>
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField>      
+                 <asp:TemplateField HeaderText="IDType"> 
+                                        
+                           
+                            <ItemTemplate>  
+                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("IDType") %>'>
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField>    
+                 <asp:TemplateField HeaderText="IdNo"> 
+                                        
+                           
+                            <ItemTemplate>  
+                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("IdNo") %>'>
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField>    
+                 <asp:TemplateField HeaderText="Address"> 
+                                        
+                           
+                            <ItemTemplate>  
+                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("Address") %>'>
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField>    
+                 <asp:TemplateField HeaderText="State"> 
+                                        
+                           
+                            <ItemTemplate>  
+                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("State") %>'>
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField>   
+                 <asp:TemplateField HeaderText="City"> 
+                                        
+                           
+                            <ItemTemplate>  
+                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("City") %>' >
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField>    
+                 <asp:TemplateField HeaderText="Code">                                        
+                           
+                            <ItemTemplate>  
+                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("Code") %>'>
+                                </asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField>   
+               
+                 
+            </Columns>
+
+            <EditRowStyle BackColor="#999999" />
+            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#E2DED6" ForeColor="#333333" Font-Bold="True" />
+            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+        </asp:GridView>              
+                                    <%--</div>--%>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                </div>
+        </div>
+
+               
            
-        </asp:MultiView>
+           
+     </header>
+   
+      
     </form>
+    <!-- all js here -->
+
+		
+		<!-- bootstrap js -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- owl.carousel js -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- magnific js -->
+        <script src="js/magnific.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- meanmenu js -->
+        <script src="js/jquery.meanmenu.js"></script>
+		<!-- Form validator js -->
+		<script src="js/form-validator.min.js"></script>
+		<!-- plugins js -->
+		<script src="js/plugins.js"></script>
+		<!-- main js -->
+		<script src="js/main.js"></script>
 </body>
 </html>
