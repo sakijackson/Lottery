@@ -2,6 +2,64 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="VerifyUserLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyUserLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyUserLoginResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WebServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifyAdminLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyAdminLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyAdminLoginResult" type="tns:AdminInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AdminInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsExistingUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsExistingUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsExistingUserResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="InsertUserInfo">
         <s:complexType>
           <s:sequence>
@@ -28,24 +86,13 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="WebServiceResponse">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="VerifyUserLogin">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
-          </s:sequence>
-        </s:complexType>
+      <s:element name="InsertTractionInfo">
+        <s:complexType />
       </s:element>
-      <s:element name="VerifyUserLoginResponse">
+      <s:element name="InsertTractionInfoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="VerifyUserLoginResult" type="tns:WebServiceResponse" />
+            <s:element minOccurs="0" maxOccurs="1" name="InsertTractionInfoResult" type="tns:WebServiceResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -66,6 +113,21 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="InsertTicketInfoResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTicketInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TicketNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTicketInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTicketInfoResult" type="tns:WebServiceResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -90,17 +152,13 @@
           <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="IsExistingUser">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
-          </s:sequence>
-        </s:complexType>
+      <s:element name="GetUserCount">
+        <s:complexType />
       </s:element>
-      <s:element name="IsExistingUserResponse">
+      <s:element name="GetUserCountResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="IsExistingUserResult" type="tns:WebServiceResponse" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserCountResult" type="tns:WebServiceResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -154,19 +212,130 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetTicketsInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTicketsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketsInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionsInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTransactionsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionsInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResultInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetResultInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResultInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResultsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResultsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResultsInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="VerifyUserLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyUserLogin" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUserLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyUserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyAdminLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyAdminLogin" />
+  </wsdl:message>
+  <wsdl:message name="VerifyAdminLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyAdminLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsExistingUserSoapIn">
+    <wsdl:part name="parameters" element="tns:IsExistingUser" />
+  </wsdl:message>
+  <wsdl:message name="IsExistingUserSoapOut">
+    <wsdl:part name="parameters" element="tns:IsExistingUserResponse" />
+  </wsdl:message>
   <wsdl:message name="InsertUserInfoSoapIn">
     <wsdl:part name="parameters" element="tns:InsertUserInfo" />
   </wsdl:message>
   <wsdl:message name="InsertUserInfoSoapOut">
     <wsdl:part name="parameters" element="tns:InsertUserInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="VerifyUserLoginSoapIn">
-    <wsdl:part name="parameters" element="tns:VerifyUserLogin" />
+  <wsdl:message name="InsertTractionInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertTractionInfo" />
   </wsdl:message>
-  <wsdl:message name="VerifyUserLoginSoapOut">
-    <wsdl:part name="parameters" element="tns:VerifyUserLoginResponse" />
+  <wsdl:message name="InsertTractionInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertTractionInfoResponse" />
   </wsdl:message>
   <wsdl:message name="InsertTicketInfoSoapIn">
     <wsdl:part name="parameters" element="tns:InsertTicketInfo" />
@@ -174,17 +343,23 @@
   <wsdl:message name="InsertTicketInfoSoapOut">
     <wsdl:part name="parameters" element="tns:InsertTicketInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="UpdateTicketInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTicketInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTicketInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTicketInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="GetTicketInfoSoapIn">
     <wsdl:part name="parameters" element="tns:GetTicketInfo" />
   </wsdl:message>
   <wsdl:message name="GetTicketInfoSoapOut">
     <wsdl:part name="parameters" element="tns:GetTicketInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="IsExistingUserSoapIn">
-    <wsdl:part name="parameters" element="tns:IsExistingUser" />
+  <wsdl:message name="GetUserCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserCount" />
   </wsdl:message>
-  <wsdl:message name="IsExistingUserSoapOut">
-    <wsdl:part name="parameters" element="tns:IsExistingUserResponse" />
+  <wsdl:message name="GetUserCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserCountResponse" />
   </wsdl:message>
   <wsdl:message name="GetUserInfoSoapIn">
     <wsdl:part name="parameters" element="tns:GetUserInfo" />
@@ -198,26 +373,72 @@
   <wsdl:message name="GetUsersInfoSoapOut">
     <wsdl:part name="parameters" element="tns:GetUsersInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="GetTicketsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResultInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResultInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetResultInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResultInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResultsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResultsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetResultsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResultsInfoResponse" />
+  </wsdl:message>
   <wsdl:portType name="DBServiceSoap">
+    <wsdl:operation name="VerifyUserLogin">
+      <wsdl:input message="tns:VerifyUserLoginSoapIn" />
+      <wsdl:output message="tns:VerifyUserLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAdminLogin">
+      <wsdl:input message="tns:VerifyAdminLoginSoapIn" />
+      <wsdl:output message="tns:VerifyAdminLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistingUser">
+      <wsdl:input message="tns:IsExistingUserSoapIn" />
+      <wsdl:output message="tns:IsExistingUserSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="InsertUserInfo">
       <wsdl:input message="tns:InsertUserInfoSoapIn" />
       <wsdl:output message="tns:InsertUserInfoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="VerifyUserLogin">
-      <wsdl:input message="tns:VerifyUserLoginSoapIn" />
-      <wsdl:output message="tns:VerifyUserLoginSoapOut" />
+    <wsdl:operation name="InsertTractionInfo">
+      <wsdl:input message="tns:InsertTractionInfoSoapIn" />
+      <wsdl:output message="tns:InsertTractionInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="InsertTicketInfo">
       <wsdl:input message="tns:InsertTicketInfoSoapIn" />
       <wsdl:output message="tns:InsertTicketInfoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateTicketInfo">
+      <wsdl:input message="tns:UpdateTicketInfoSoapIn" />
+      <wsdl:output message="tns:UpdateTicketInfoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetTicketInfo">
       <wsdl:input message="tns:GetTicketInfoSoapIn" />
       <wsdl:output message="tns:GetTicketInfoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="IsExistingUser">
-      <wsdl:input message="tns:IsExistingUserSoapIn" />
-      <wsdl:output message="tns:IsExistingUserSoapOut" />
+    <wsdl:operation name="GetUserCount">
+      <wsdl:input message="tns:GetUserCountSoapIn" />
+      <wsdl:output message="tns:GetUserCountSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserInfo">
       <wsdl:input message="tns:GetUserInfoSoapIn" />
@@ -227,9 +448,56 @@
       <wsdl:input message="tns:GetUsersInfoSoapIn" />
       <wsdl:output message="tns:GetUsersInfoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetTicketsInfo">
+      <wsdl:input message="tns:GetTicketsInfoSoapIn" />
+      <wsdl:output message="tns:GetTicketsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsInfo">
+      <wsdl:input message="tns:GetTransactionsInfoSoapIn" />
+      <wsdl:output message="tns:GetTransactionsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionInfo">
+      <wsdl:input message="tns:GetTransactionInfoSoapIn" />
+      <wsdl:output message="tns:GetTransactionInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResultInfo">
+      <wsdl:input message="tns:GetResultInfoSoapIn" />
+      <wsdl:output message="tns:GetResultInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResultsInfo">
+      <wsdl:input message="tns:GetResultsInfoSoapIn" />
+      <wsdl:output message="tns:GetResultsInfoSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DBServiceSoap" type="tns:DBServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerifyUserLogin">
+      <soap:operation soapAction="http://tempuri.org/VerifyUserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAdminLogin">
+      <soap:operation soapAction="http://tempuri.org/VerifyAdminLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistingUser">
+      <soap:operation soapAction="http://tempuri.org/IsExistingUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertUserInfo">
       <soap:operation soapAction="http://tempuri.org/InsertUserInfo" style="document" />
       <wsdl:input>
@@ -239,8 +507,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="VerifyUserLogin">
-      <soap:operation soapAction="http://tempuri.org/VerifyUserLogin" style="document" />
+    <wsdl:operation name="InsertTractionInfo">
+      <soap:operation soapAction="http://tempuri.org/InsertTractionInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -257,6 +525,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateTicketInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateTicketInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetTicketInfo">
       <soap:operation soapAction="http://tempuri.org/GetTicketInfo" style="document" />
       <wsdl:input>
@@ -266,8 +543,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="IsExistingUser">
-      <soap:operation soapAction="http://tempuri.org/IsExistingUser" style="document" />
+    <wsdl:operation name="GetUserCount">
+      <soap:operation soapAction="http://tempuri.org/GetUserCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -293,9 +570,81 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTicketsInfo">
+      <soap:operation soapAction="http://tempuri.org/GetTicketsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsInfo">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionInfo">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultInfo">
+      <soap:operation soapAction="http://tempuri.org/GetResultInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultsInfo">
+      <soap:operation soapAction="http://tempuri.org/GetResultsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="DBServiceSoap12" type="tns:DBServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerifyUserLogin">
+      <soap12:operation soapAction="http://tempuri.org/VerifyUserLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAdminLogin">
+      <soap12:operation soapAction="http://tempuri.org/VerifyAdminLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistingUser">
+      <soap12:operation soapAction="http://tempuri.org/IsExistingUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertUserInfo">
       <soap12:operation soapAction="http://tempuri.org/InsertUserInfo" style="document" />
       <wsdl:input>
@@ -305,8 +654,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="VerifyUserLogin">
-      <soap12:operation soapAction="http://tempuri.org/VerifyUserLogin" style="document" />
+    <wsdl:operation name="InsertTractionInfo">
+      <soap12:operation soapAction="http://tempuri.org/InsertTractionInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -323,6 +672,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateTicketInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTicketInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetTicketInfo">
       <soap12:operation soapAction="http://tempuri.org/GetTicketInfo" style="document" />
       <wsdl:input>
@@ -332,8 +690,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="IsExistingUser">
-      <soap12:operation soapAction="http://tempuri.org/IsExistingUser" style="document" />
+    <wsdl:operation name="GetUserCount">
+      <soap12:operation soapAction="http://tempuri.org/GetUserCount" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -352,6 +710,51 @@
     </wsdl:operation>
     <wsdl:operation name="GetUsersInfo">
       <soap12:operation soapAction="http://tempuri.org/GetUsersInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetTicketsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetResultInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultsInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetResultsInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

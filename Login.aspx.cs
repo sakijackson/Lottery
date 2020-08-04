@@ -22,24 +22,28 @@ public partial class Login : System.Web.UI.Page
         try
         {                       
             wsr = lws.VerifyUserLogin(UserId.Value.Trim(), Password.Value.Trim());
-            if (wsr.Result != "0")
+            if (wsr.Status != "")
             {
-                Session["UserId"] = wsr.Result;
+                Session["UserId"] = wsr.Status;
                 Response.Redirect("UserHome.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();                
 
             }
+            else if(wsr.Status=="0")
+            {
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('"+wsr.Error+"')", true);
+            }
             else
             {
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('UserId or Password is Invalid');", true);
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('UserName Or Password Incorrect');", true);
             }
                      
                        
         }
-        catch 
+        catch(Exception ex) 
         {
-            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error + "');", true);
-            //ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message + "');", true);
+
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message + "');", true);
         }
     }
 }

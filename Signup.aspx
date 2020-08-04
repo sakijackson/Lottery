@@ -35,7 +35,7 @@
                     event.preventDefault();
                 }
             });
-            $("#PhoneNumber").on("keypress keyup", function (event) {
+            $("#PhoneNumber,#Code").on("keypress keyup", function (event) {
                 $(this).val($(this).val().replace(/[^0-9\.+]/, ''));
                 if ((event.which < 48 || event.which > 57)) {
                     event.preventDefault();

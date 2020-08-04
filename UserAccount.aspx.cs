@@ -27,11 +27,17 @@ public partial class UserAccount : System.Web.UI.Page
                         LastName.Value = ui.LastName;
                         PhoneNumber.Value = ui.PhoneNumber;
                         Email.Value = ui.Email;
+                        //Password.Value = ui.Password;
+                        DOB.Value = ui.DateOfBirth;
+                        Nationality.Value = ui.Nationality;
+                        ID.Value = ui.IDType;
                         IDNo.Value = ui.IdNo;
                         Address.Value = ui.Address;
                         State.Value = ui.State;
                         City.Value = ui.City;
                         Code.Value = ui.Code;
+                        //FirstName.Attributes.Add("readonly","readonly");
+                       
 
                     }
                 }

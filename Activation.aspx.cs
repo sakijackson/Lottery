@@ -30,7 +30,7 @@ public partial class Activation : System.Web.UI.Page
                         activationCode = HttpContext.Current.Request.QueryString["ActivationCode"];
                         wsr = ms.VerifyActivationEmail(activationCode);
                         
-                        if (wsr.Result =="1")
+                        if (wsr.Status == "1")
                         {
                             Response.Redirect("Login.aspx", false);
                             Context.ApplicationInstance.CompleteRequest();

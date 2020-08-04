@@ -4,36 +4,145 @@
 
 <html>
 <head runat="server">
-   <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="description" content=""/>
+   <meta charset="utf-8"/> 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="manifest" href="site.webmanifest"/>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico"/>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="assets/css/slicknav.css"/>
-    <link rel="stylesheet" href="assets/css/flaticon.css"/>
-    <link rel="stylesheet" href="assets/css/gijgo.css"/>
-	<link rel="stylesheet" href="assets/css/animate.min.css"/>
-	<link rel="stylesheet" href="assets/css/magnific-popup.css"/>
-	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css"/>
-	<link rel="stylesheet" href="assets/css/themify-icons.css"/>
-	<link rel="stylesheet" href="assets/css/slick.css"/>
-	<link rel="stylesheet" href="assets/css/nice-select.css"/>
-	<link rel="stylesheet" href="assets/css/style.css"/>   
-     <title>Admin Home</title>
+    <title>Admin | Playdo</title>
+       <link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
+
+    <!-- all css here -->
+
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- magnific css -->
+    <link rel="stylesheet" href="css/magnific.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- jquery latest version -->
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <%--<script type="text/javascript" >
+        $(document).ready(function () { 
+            $("#ViewTicket").hide();  
+            $("#ViewUsers").hide(); 
+            $("#TicketPrice,#PriceAmount").on("keypress keyup", function (event) {               
+                $(this).val($(this).val().replace(/[^0-9\.+]/, ''));
+                if ((event.which < 48 || event.which > 57)) {
+                    event.preventDefault();
+                }
+            }); 
+             
+            $("#View").click(function () {
+                $("#AddTicket").hide();
+                $("#ViewUsers").hide();
+                $("#ViewTicket").show();
+            });
+            $("#Add").click(function () {
+                $("#ViewTicket").hide();
+                $("#ViewUsers").hide();
+                $("#AddTicket").show();
+            });
+            $("#UsersView").click(function () {
+                $("#ViewTicket").hide();
+                $("#AddTicket").hide(); 
+                $("#ViewUsers").show();
+            });
+        });
+    </script>   --%> 
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+     <form runat="server">
+    <header>
+       
+         <div id="sticker" class="header-area header-area-2 hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <!-- logo start -->
+                        <div class="col-md-3 col-sm-3">
+                            <div class="logo">
+                                <!-- Brand -->
+                                <a class="navbar-brand " href="Home.aspx">
+                                    <img src="img/logo/logo2.png" alt=""/>
+                                </a>
+                            </div>
+                            <!-- logo end -->
+                        </div>
+                        <div class="col-md-9 col-sm-9">
+                            <div class="header-right-link">
+                                <!-- search option end -->
+                               <asp:LinkButton ID="btnLogout" runat="server" Text="Logout"  CssClass="ticket-btn" OnClick="btnLogout_Click" >Logout</asp:LinkButton>
+                                 <%--<asp:Button ID="BtnLogout" runat="server" class="ticket-btn" Text="Logout" OnClick="BtnLogout_Click"   ></asp:Button>--%>
+                               
+                                <%--<asp:LinkButton runat="server" id="Logout" CssClass="s-menu" onclick="BtnLogout_Click" >Logout</asp:LinkButton>--%>
+								<%--<a class="s-menu"  href="#" >Logout</a>--%>
+                            </div>
+                            <!-- mainmenu start -->
+                            <nav class="navbar navbar-default">
+                                <div class="collapse navbar-collapse" id="navbar-example">
+                                    <div class="main-menu">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a class="pagess" href="AdminHome.aspx">Dashboard</a>
+                                               
+                                            </li>
+                                            
+                                         <%--   <li><a class="pagess" href="#">Games</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="#">All Games</a></li>
+                                                    <li><a href="#">Games Details</a></li>
+                                                </ul>
+                                            </li>                       --%>                     
+                                            <li><a class="pagess" href="#">Lottery</a>
+                                                <ul class="sub-menu">
+                                                   <li><a id="Add" runat="server" href="AddTicket.aspx">Add Ticket</a></li>
+                                                    <li><a id="View" runat="server" href="ViewTicket.aspx">view</a></li>
+                                                    
+                                                </ul>
+                                            </li>
+                                            <li><a class="pagess" href="#">User</a>
+                                                <ul class="sub-menu">
+                                                    <li><a id="UsersView" runat="server" href="ViewUsers.aspx">view</a></li>
+                                                    
+                                                </ul>
+                                            </li>
+                                            <li><a class="pagess" href="#">Transactions</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="blog.html"></a></li>
+                                                    <li><a href="blog-sidebar.html"></a></li>
+                                                    <li><a href="blog-details.html"></a></li>
+                                                </ul>
+                                            </li>
+                                            <%--<li><a href="contact.html">contacts</a></li>--%>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            <!-- mainmenu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>                                               
+     </header>
     
-    <form id="form1" runat="server">
-    <div>
+   
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-    </div>
-    </form>  
+   </form>
+   
 </body>
 </html>

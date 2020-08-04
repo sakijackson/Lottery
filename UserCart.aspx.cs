@@ -24,8 +24,9 @@ public partial class UserCart : System.Web.UI.Page
                     if (ti.Status != 0)
                     {
                         Availability.InnerHtml = ti.TicketCount.ToString();
+                        //Availability.InnerHtml = "2";
                         ProductPrice.InnerHtml = ti.TicketPrice.ToString();
-
+                        total.InnerHtml = (int.Parse(ti.TicketPrice.ToString()) * 1).ToString();
                     }
                 }
                 else

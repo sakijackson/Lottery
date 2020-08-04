@@ -241,7 +241,7 @@ div#preloader {
     position: relative;
 }
 .section-headline h3 {
-    font-size: 40px;
+    font-size: 30px;
     text-transform: capitalize;
     line-height: 48px;
     color:#fff;
@@ -1502,7 +1502,8 @@ div#preloader {
     font-weight: 600;
 }
 .single-how.first-item,
-.single-how.thired-item{
+.single-how.second-item,
+.single-how.thired-item {
     position: relative;
     top: 60px;
 }
@@ -2813,13 +2814,14 @@ span.dolar {
 /*----------------------------------------
  27. Login And Register page
 ----------------------------------------*/
-.login-area{
-    background:url(img/background/slide2.jpg) no-repeat scroll center center / cover;
+.login-area {
+    background: url(img/background/img4.jpg) no-repeat scroll center center / cover;
     position: relative;
+    
 }
 .login-overlay {
     position: absolute;
-    background: rgba(23,22,39,0.90);
+    background: rgba(70, 69, 102, 0.9);
     top: 0;
     width: 100%;
     left: 0;

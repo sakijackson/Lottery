@@ -56,7 +56,7 @@
         <script src="js/main.js"></script>
   
      <style>
-            /*table input[type="text"],input[type="button"]
+            table input[type="text"],input[type="button"]
             {
               color: white;
               border-radius: 5px;
@@ -66,7 +66,26 @@
             {
              
               text-align: center;
-            }*/
+            }
+            
+            .form-control{
+                color: #fff;
+            }
+        .form-group{
+              padding:12px;
+              
+            }
+        .form-group>label{
+          position:absolute;
+          top:-1px;
+          left:20px;
+          /*background-color:white;*/
+        }
+
+        .form-group>input{
+          border:none;
+        }
+       
         </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -149,7 +168,12 @@
                                                 </ul>
                                             </li>--%>
                                             <li><a class="pagess" href="UserLottery.aspx">Lottery</a></li>
-                                            <li><a class="pagess" href="UserAccount.aspx">Account</a></li>
+                                            <li><a class="pagess" href="#">Account</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="UserAccount.aspx">Personal Details</a></li>
+                                                    <li><a href="UserHistory.aspx">History</a>
+                                                </ul>
+                                            </li>
                                                                                 
                                         </ul>
                                     </div>

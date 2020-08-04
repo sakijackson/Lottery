@@ -15,6 +15,7 @@
               text-align: center;
             }
         </style>
+     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
      <!-- Start Cart area -->
@@ -67,21 +68,23 @@
                                                 <td>
                                                     <div class="quantity clearfix">
                                                         <input type="button" value="-" class="minus" field="quantity">
-                                                        <input  type="text" id="quantity" name="quantity" value="1" class="qty" />
+                                                        <input  type="text" id="quantity" name="quantity" value="1" class="qty" readonly="readonly" />
                                                         <input type="button" value="+" class="plus" field="quantity">
                                                     </div>
                                                 </td>
 
                                                 <td >
-                                                    <span id="total" class="total_amount"></span>
+                                                    <span id="total" runat="server" class="total_amount"></span>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
                                                 </td>
                                             </tr>   
                                             <tr>
-                                                <td colspan="5" style="text-align: center;">TOTAL PRODUCTS (TAX INC.)</td>
-                                                <td colspan="2"></td>
+                                                <td colspan="5" style="text-align: center;">TOTAL</td>
+                                                <td colspan="2">
+                                                    
+                                                </td>
                                             </tr>
                                            
                                             
@@ -90,14 +93,20 @@
                                                 <td colspan="2"></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="5" style="text-align: center;">TOTAL</td>
-                                                <td colspan="2"></td>
+                                                <td colspan="5" style="text-align: center;">TOTAL WithTax</td>
+                                                <td colspan="2">
+                                                    <span id="TotalPriceWithTax" runat="server">200</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                        <tfoot>
                                            
                                             <tr>
-                                                <td colspan="6"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                                                <td colspan="6">
+                                                    <asp:Button ID="BtnCon" runat="server" Text="Continue Shopping" CssClass="s-menu"  />
+                                                    <%--<a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>--%>
+
+                                                </td>
                                                 
                                                 
                                                 <td colspan=""> <asp:Button ID="BtnCheckout" runat="server" Text="Checkout" CssClass="s-menu"  />
@@ -113,40 +122,62 @@
             </div>
         </div>
 
-     <script>
-            function calculate(obj) {
-                var price = parseFloat($(obj).parent().parent().parent().find('.amount').text()) || 0;
-                var quantity = parseInt($(obj).parent().find('.qty').val());
-                var total = price * quantity;
-                $(obj).parent().parent().parent().find('.total_amount').text(total);;
-            }
+    <script>
+        
 
-            function changeQuantity(num, obj) {
-                //$("#quantity").val( parseInt($("#quantity").val())+num);
-                $(obj).parent().find('.qty').val(parseInt($(obj).parent().find('.qty').val()) + num);
-            }
+        function calculate(obj) {
+            var price = parseFloat($(obj).parent().parent().parent().find('.amount').text()) || 0;
+            var quantity = parseInt($(obj).parent().find('.qty').val());
+            var total = price * quantity;
+            $(obj).parent().parent().parent().find('.total_amount').text(total);            
+            var TotalPriceWithTax = document.getElementById("ContentPlaceHolder1_TotalPriceWithTax");
+            TotalPriceWithTax.textContent = total;
+          
+            
 
-            $().ready(function () {
-                //calculate();
-                $(".minus").click(function () {
+        }
+
+        function changeQuantity(num, obj) {
+            //$("#quantity").val( parseInt($("#quantity").val())+num);
+            $(obj).parent().find('.qty').val(parseInt($(obj).parent().find('.qty').val()) + num);
+        }
+
+        $().ready(function () {
+            
+
+            $(".minus").click(function () {
+                if ($("#quantity").val() > 1)
+                {                   
                     changeQuantity(-1, this);
                     calculate(this);
-                });
-                $(".plus").click(function () {
+                }
+               
+            });
+            $(".plus").click(function () {
+
+                var Availability = parseInt(document.getElementById("ContentPlaceHolder1_Availability").innerText);                                
+
+                if ($("#quantity").val() <  Availability && $("#quantity").val() < 3) {
                     changeQuantity(1, this);
                     calculate(this);
-                });
 
-                //$("#quantity").keyup(function(e){
-                $(".qty").keyup(function (e) {
-                    if (e.keyCode == 38) changeQuantity(1, this);
-                    if (e.keyCode == 40) changeQuantity(-1, this);
-                    calculate(this);
-                });
+                }
+                
+              
+                
 
             });
 
-     </script>
+            //$("#quantity").keyup(function(e){
+            //$(".qty").keyup(function (e) {
+            //    if (e.keyCode == 38) changeQuantity(1, this);
+            //    if (e.keyCode == 40) changeQuantity(-1, this);
+            //    calculate(this);
+            //});
+
+        });
+
+    </script>
         <!-- End Cart area -->
 </asp:Content>
 

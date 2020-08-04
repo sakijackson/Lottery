@@ -26,6 +26,38 @@
 
 		<!-- modernizr css -->
 		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+     <style>
+            /*table input[type="text"],input[type="button"]
+            {
+              color: white;
+              border-radius: 5px;
+              border: 1px solid black;
+            }
+            table input[type="text"]
+            {
+             
+              text-align: center;
+            }
+            */
+            .form-control{
+                color: #fff;
+            }
+        .form-group{
+              padding:12px;
+              
+            }
+        .form-group>label{
+          position:absolute;
+          top:-1px;
+          left:20px;
+          /*background-color:white;*/
+        }
+
+        .form-group>input{
+          border:none;
+        }
+       
+        </style>
 </head>
 <body  data-spy="scroll" data-target="#navbar-example">
       <div class="login-area area-padding fix">
@@ -39,7 +71,8 @@
                                     <h4 class="login-title text-center">LOGIN</h4>
                                     <div class="row">
                                         <form id="contactForm" runat="server" class="log-form">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group" >
+                                                <%--<label>User Id</label>--%>
                                                 <input type="text" id="UserId" runat="server" class="form-control" placeholder="User ID" required="required" autocomplete="off"  data-error-messsage="Please enter your name"/>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">

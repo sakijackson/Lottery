@@ -3,6 +3,8 @@
 
 public partial class Home : System.Web.UI.Page
 {
+    LotteryWebService.DBService db;
+    LotteryWebService.WebServiceResponse wsr;
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -13,6 +15,21 @@ public partial class Home : System.Web.UI.Page
                 {
                     Response.Redirect("UserHome.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();
+                }
+                else
+                {
+                    db = new LotteryWebService.DBService();
+                    wsr = db.GetUserCount();
+                    if(wsr.Status!="0")
+                    {
+                        userCount.InnerText = wsr.Status+"+";
+                        Application["TotalOnlineUsers"].ToString();
+                    }
+                    else if(wsr.Status=="0")                        
+                    {
+                        ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error+ "');", true);
+                    }
+
                 }
             }
         }

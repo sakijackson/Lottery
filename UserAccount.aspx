@@ -21,56 +21,60 @@
                         <!-- End contact icon -->
                         <div class="col-md-8 col-sm-8 col-xs-12">
                             <div class="contact-form">
-                                <div class="row" style="color:white" >
+                                <div class="row" >
                                   
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="FirstName" runat="server" class="form-control" />
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>First name</label>
+                                            <input type="text" id="FirstName" runat="server" class="form-control" readonly="readonly"  />
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="LastName" runat="server" class="form-control" placeholder="Lastname" maxlength="30" required="required" autocomplete="off" data-error="Please enter your name" />
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>Last name</label>
+                                            <input type="text" id="LastName" runat="server" class="form-control" placeholder="Lastname" readonly="readonly" />
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="PhoneNumber" runat="server" class="form-control" placeholder="Phone number" maxlength="10" required="required" autocomplete="off" data-error="Please enter your name" />
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>PhoneNumber</label>
+                                            <input type="text" id="PhoneNumber" runat="server" class="form-control" placeholder="Phone number"  readonly="readonly" />
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="email" id="Email" runat="server" class="form-control" placeholder="Your Email" maxlength="30" required="required" autocomplete="off" data-error="Please enter your name" />
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>Email</label>
+                                            <input type="email" id="Email" runat="server" class="form-control" placeholder="Your Email" readonly="readonly" />
                                         </div>
-                                        <%--<div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="password" id="Password" runat="server" class="form-control" placeholder="Password" maxlength="20" required="required" autocomplete="off" data-error="Please enter your message subject" />
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="date" id="DOB" runat="server" class="form-control" required="required" max="2002-01-01" />
+                                       <%-- <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="Password" runat="server" class="form-control" placeholder="Password" readonly="readonly"  />
                                         </div>--%>
-                                       <%-- <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:DropDownList ID="Country" runat="server" CssClass="form-control" required="true">
-                                                <asp:ListItem Selected="False">--Select Country--</asp:ListItem>
-                                                <asp:ListItem>India</asp:ListItem>
-                                                <asp:ListItem>Qatar</asp:ListItem>
-                                                
-                                            </asp:DropDownList>
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>Date Of Birth</label>
+                                            <input type="text" id="DOB" runat="server" class="form-control"  />
                                         </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <select id="IDType" runat="server" class="form-control" >
-                                                <option>--Selct ID--</option>
-                                                <option value="Passport">Passport</option>
-                                                <option value="Driving Licence">Driving Licence</option>
-                                               
-                                            </select>
-                                        </div>--%>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="IDNo" runat="server" class="form-control" placeholder="ID No" required="required" data-error="Please enter your message subject" />
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>Nationality</label>
+                                           
+                                                <input type="text" id="Nationality" runat="server" class="form-control" placeholder="ID No" readonly="readonly"  />
+                                         
                                         </div>
-                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="Address" runat="server" class="form-control" placeholder="Address" required="required" data-error="Please enter your message subject" />
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>ID</label>
+                                           <input type="text" id="ID" runat="server" class="form-control" placeholder="ID No" readonly="readonly"  />
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="State" runat="server" class="form-control" placeholder="State" required="required" data-error="Please enter your message subject"  />
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>IDNo</label>
+                                            <input type="text" id="IDNo" runat="server" class="form-control" placeholder="ID No" readonly="readonly"  />
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                             <input type="text" id="City" runat="server" class="form-control" placeholder="City" required="required" data-error="Please enter your message subject"  />
+                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                             <label>Address</label>
+                                            <input type="text" id="Address" runat="server" class="form-control" placeholder="Address" readonly="readonly"  />
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="Code" runat="server" class="form-control" placeholder="Code" required="required" maxlength="7" data-error="Please enter your message subject" />
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>State</label>
+                                            <input type="text" id="State" runat="server" class="form-control" placeholder="State" readonly="readonly"  />
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>City</label>
+                                             <input type="text" id="City" runat="server" class="form-control" placeholder="City" readonly="readonly"  />
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                            <label>Code</label>
+                                            <input type="text" id="Code" runat="server" class="form-control" placeholder="Code" readonly="readonly"  />
                                         </div>
                                        
                                         <div class="col-md-6 col-sm-6 col-xs-12 text-center">
