@@ -123,13 +123,13 @@
                                 <div class="collapse navbar-collapse" id="navbar-example">
                                     <div class="main-menu">
                                         <ul class="nav navbar-nav navbar-right">
-                                            <li><a class="pagess" href="Home.aspx">Home</a>
+                                            <%--<li><a class="pagess" href="Home.aspx">Home</a>--%>
                                                 <%--<ul class="sub-menu">
                                                     <li><a href="index.html">Home 01</a></li>
                                                     <li><a href="index-2.html">Home 02</a></li>
                                                     <li><a href="index-3.html">Home 03</a></li>
                                                 </ul>--%>
-                                            </li>
+                                            <%--</li>--%>
                                             <%--<li><a class="pagess" href="play.html">Play</a></li>
                                             <li><a class="pagess" href="#">Games</a>
                                                 <ul class="sub-menu">
@@ -137,7 +137,7 @@
                                                     <li><a href="games-details.html">Games Details</a></li>
                                                 </ul>
                                             </li>--%>
-                                            <li><a class="pagess" href="lottery.aspx">Lottery</a></li>
+                                          <%--  <li><a class="pagess" href="lottery.aspx">Lottery</a></li>--%>
                                            <%-- <li><a class="pagess" href="#">Pages</a>
                                                 <ul class="sub-menu">
                                                    <li><a href="about.html">About</a></li>
@@ -308,7 +308,7 @@
                                     <img src="img/about/achive1.png" alt="">
                                 </div>
                                 <div class="achivement-text">
-                                    <span class="achive-number"></span>
+                                    <span id="ActiveCount" runat="server" class="achive-number"></span>
                                     <h6>Live online</h6>
                                 </div>
                             </div>

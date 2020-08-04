@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+
 
 public partial class UserLottery : System.Web.UI.Page
 {
+    LotteryWebService.DBService lws;
+    LotteryWebService.TicketInfo ti;
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -22,8 +20,8 @@ public partial class UserLottery : System.Web.UI.Page
                 }
                 else
                 {
-                    LotteryWebService.DBService lws = new LotteryWebService.DBService();
-                    LotteryWebService.TicketInfo ti = new LotteryWebService.TicketInfo();
+                  lws = new LotteryWebService.DBService();
+                     ti= new LotteryWebService.TicketInfo();
 
                     ti = lws.GetTicketInfo();
 
@@ -48,7 +46,8 @@ public partial class UserLottery : System.Web.UI.Page
     protected void BtnBuyTicket_Click(object sender, EventArgs e)
     {
         try
-        {   
+        {
+              // Response.Cookies["TicketNO"].Value = ti.TicketNo;
                 Response.Redirect("UserCart.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();           
             

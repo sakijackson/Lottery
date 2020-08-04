@@ -13,10 +13,9 @@ public partial class Cart : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                if (Session["UserId"] != null)
-                {
-                  
-                    btnLogin.Text = "Signout";
+                if (!string.IsNullOrEmpty(Session["UserId"] as string))
+                {                 
+                    
                     LotteryWebService.DBService lws = new LotteryWebService.DBService();
                     LotteryWebService.TicketInfo ti = new LotteryWebService.TicketInfo();
 

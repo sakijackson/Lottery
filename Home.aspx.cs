@@ -23,7 +23,7 @@ public partial class Home : System.Web.UI.Page
                     if(wsr.Status!="0")
                     {
                         userCount.InnerText = wsr.Status+"+";
-                        Application["TotalOnlineUsers"].ToString();
+                        ActiveCount.InnerText=Application["TotalOnlineUsers"].ToString();
                     }
                     else if(wsr.Status=="0")                        
                     {

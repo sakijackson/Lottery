@@ -43,7 +43,7 @@
                                                 <th>Price</th>
                                                 <th>Quantity</th>
                                                 <th>Total</th>
-                                                <th></th>
+                                               <%-- <th></th>--%>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -76,9 +76,9 @@
                                                 <td >
                                                     <span id="total" runat="server" class="total_amount"></span>
                                                 </td>
-                                                <td>
+                                               <%-- <td>
                                                     <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-                                                </td>
+                                                </td>--%>
                                             </tr>   
                                             <tr>
                                                 <td colspan="5" style="text-align: center;">TOTAL</td>
@@ -102,7 +102,7 @@
                                        <tfoot>
                                            
                                             <tr>
-                                                <td colspan="6">
+                                                <td colspan="5">
                                                     <asp:Button ID="BtnCon" runat="server" Text="Continue Shopping" CssClass="s-menu"  />
                                                     <%--<a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>--%>
 

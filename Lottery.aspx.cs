@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class Lottery : System.Web.UI.Page
 {
@@ -13,22 +8,28 @@ public partial class Lottery : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                if (Session["UserId"] != null)
+                if (!string.IsNullOrEmpty(Session["UserId"] as string))
                 {
-                   
-                    btnLogin.Text = "Signout";
-                }
-                LotteryWebService.DBService lws = new LotteryWebService.DBService();
-                LotteryWebService.TicketInfo ti = new LotteryWebService.TicketInfo();
-               
-                ti = lws.GetTicketInfo();
+                    LotteryWebService.DBService lws = new LotteryWebService.DBService();
+                    LotteryWebService.TicketInfo ti = new LotteryWebService.TicketInfo();
 
-                if (ti.Status != 0)
-                {
-                    count.InnerText = ti.TicketCount.ToString() + "/" + 10;
-                    TicketPrice.InnerHtml = ti.TicketPrice.ToString();
-                    PriceAmount.InnerHtml = ti.PriceAmount.ToString();
+                    ti = lws.GetTicketInfo();
+
+                    if (ti.Status != 0)
+                    {
+                        count.InnerText = ti.TicketCount.ToString() + "/" + 10;
+                        TicketPrice.InnerHtml = ti.TicketPrice.ToString();
+                        PriceAmount.InnerHtml = ti.PriceAmount.ToString();
+                    }
+
                 }
+                else
+                {
+                    Response.Redirect("Home.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                    
+                }
+               
             }
             
         }
