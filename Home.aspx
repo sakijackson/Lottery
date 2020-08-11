@@ -61,14 +61,14 @@
         <header class="header-one">
              <form runat="server">
             <!-- Start top bar -->
-            <%--<div class="topbar-area">
+            <div class="topbar-area">
                 <div class="container">
                     <div class="row">
                         <div class=" col-md-8 col-sm-8 col-xs-12">
                             <div class="topbar-left">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-envelope"></i> info@playdo4.com</a></li>
-                                    <%--<li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>-
+                                    <li><a href="#"><i class="fa fa-envelope"></i> help@.com</a></li>
+                                    <li><a href="#"><i class="fa fa-clock-o"></i> Live support-</a></li>
                                 </ul>  
                             </div>
                         </div>
@@ -83,13 +83,13 @@
                                            <li><a href="#"><img src="img/icon/w5.png" alt="">???????</a>
                                        </ul>
                                     </li>
-                                    <li><a id="log" runat="server" href="#" onclick="BtnLogin()"><img runat="server" src="img/icon/login.png" alt=""/>Login</a> </li>
+                                    <li><a id="log" runat="server" href="#" onclick="BtnLogin()"><img runat="server" src="img/icon/login.png" alt=""/>Login</a> </li>--%>
                                 </ul>
 							</div>
                         </div>
                     </div>
                 </div>
-            </div>--%>
+            </div>
             <!-- End top bar -->
             <!-- header-area start -->
             <div id="sticker" class="header-area header-area-2 hidden-xs">
@@ -1008,12 +1008,12 @@
                                     <p>
                                         Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define their new business objectives and then create. Replacing a  maintains the amount of lines. 
                                     </p>
-                                    <div class="subs-feilds">
+                                   <%-- <div class="subs-feilds">
                                         <div class="suscribe-input">
                                             <input type="email" class="email form-control width-80" id="sus_email" placeholder="Type Email">
                                             <button type="submit" id="sus_submit" class="add-btn">Subscribe</button>
                                         </div>
-                                    </div>
+                                    </div>--%>
                                 </div>
                             </div>
                         </div>
@@ -1041,7 +1041,7 @@
                                 <div class="footer-head">
                                     <h4>Company</h4>
                                     <ul class="footer-list">
-                                        <li><a href="#">About us</a></li>
+                                        <li><a href="about.html">About us</a></li>
                                         <li><a href="#">Services </a></li>
                                        <%-- <li><a href="#">Events</a></li>
                                         <li><a href="#">Promotion</a></li>
@@ -1052,21 +1052,22 @@
                             </div>
                         </div>
                         <!-- end single footer -->
-                        <%--<div class="col-md-2 hidden-sm col-xs-12">
+                        <div class="col-md-2 hidden-sm col-xs-12">
                             <div class="footer-content">
                                 <div class="footer-head">
                                     <h4>Payments</h4>
                                     <ul class="footer-list">
-                                        <li><a href="#">Ripple coin</a></li>
+                                        <%--<li><a href="#">Ripple coin</a></li>--%>
                                         <li><a href="#">Bitcoin</a></li>
                                         <li><a href="#">Ethireum</a></li>
-                                        <li><a href="#">Light coin</a></li>
-                                        <li><a href="#">Coin base</a></li>
-                                        <li><a href="#">Skrill card</a></li>
+                                         <li><a href="#">Skrill</a></li>
+                                       <%-- <li><a href="#">Light coin</a></li>
+                                        <li><a href="#">Coin base</a></li>--%>
+                                       <%-- <li><a href="#">Skrill card</a></li>--%>
                                     </ul>
                                 </div>
                             </div>
-                        </div>--%>
+                        </div>
                         <!-- end single footer -->
                         <div class="col-md-2 hidden-sm col-xs-12">
                              <div class="footer-content last-content">

@@ -15,7 +15,7 @@
                                 <div class="ticket-image">
                                     <span class="win-price">Win Reward</span>
                                     <span id="PriceAmount" runat="server" class="win-money"></span>
-                                    <img src="img/about/chips2.png" alt=""/>
+                                    <img src="img/about/lottery.png" alt=""/>
                                 </div>
                                 <div class="ticket-text">
                                     <%--<h4 class="ticket-name">Las Vegas Lottery</h4>--%>

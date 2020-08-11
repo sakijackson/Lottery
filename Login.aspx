@@ -26,6 +26,47 @@
 
 		<!-- modernizr css -->
 		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!-- all js here -->
+
+		<!-- jquery latest version -->
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Form validator js -->
+		<script src="js/form-validator.min.js"></script>
+		<!-- plugins js -->
+		<script src="js/plugins.js"></script>
+     <script type="text/javascript">  
+            //$(document).ready(function()
+            //    {  
+            //    $('#BtnLogin').click(function()
+            //       {  
+            //        $.ajax({  
+            //            type: 'POST',  
+            //            contentType: "text",  
+            //            url: 'DBService.asmx/VerifyUserLogin',  
+            //            data: "UserId=sakigokul97@live.com&Password=sakigokul",  
+            //            async: false,  
+            //            success: function(data)
+            //            {           
+            //                if (data.value == "true") {
+            //                    alert("Login Succecss");
+            //                }
+            //                else {
+            //                    alert("User Name or Password incorrect");
+            //                }
+                            
+            //            },  
+            //            error: function (response) 
+            //            {  
+            //                alert(response.d);  
+            //                console.log('there is some error');  
+            //            }  
+            //        });  
+            //    });  
+            //});  
+     </script>  
      <style>
             /*table input[type="text"],input[type="button"]
             {
@@ -115,18 +156,26 @@
                 </div>
                 </div>
         </div>
-        <!-- End Slider Area -->
-		
-		<!-- all js here -->
-
-		<!-- jquery latest version -->
-		<script src="js/vendor/jquery-1.12.4.min.js"></script>
-		<!-- bootstrap js -->
-		<script src="js/bootstrap.min.js"></script>
-		<!-- Form validator js -->
-		<script src="js/form-validator.min.js"></script>
-		<!-- plugins js -->
-		<script src="js/plugins.js"></script>
-  
+        <!-- End Slider Area -->  
+    <!-- Start Footer Area -->
+        <footer class="footer-1"> 
+            <!-- Start Footer Bottom Area -->
+            <div class="footer-area-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="copyright">
+                                <p>
+                                    Copyright © 2020
+                                    <a href="#">Playdo</a> All Rights Reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer Bottom Area -->
+        </footer>
+        <!-- End Footer Area -->
 </body>
 </html>

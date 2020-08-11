@@ -225,10 +225,11 @@ div#preloader {
     padding: 0.2em 0;
 }
 .area-padding{
-	padding: 100px 0px;
+	padding: 255px 0px;
 }
-.area-padding-2{
-    padding: 200px 0px 70px;
+.area-padding-2 {
+    /*padding: 200px 0px 70px;*/
+    padding: 292px 0px 10px;
 }
 .area-padding-3{
     padding: 70px 0px 100px;
@@ -1310,7 +1311,8 @@ div#preloader {
 .footer-1 {
     background:#12111e;
 }
-.footer-area{
+.footer-area {
+    /* padding: 290px 0px 90px;*/
     padding: 290px 0px 90px;
 }
 .footer-logo {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class AddTicket : System.Web.UI.Page
+public partial class Store : System.Web.UI.Page
 {
     LotteryWebService.DBService dbService;
     protected void Page_Load(object sender, EventArgs e)
@@ -34,16 +34,18 @@ public partial class AddTicket : System.Web.UI.Page
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
     }
-    protected void BtnAddTicket_Click(object sender, EventArgs e)
+
+    protected void BtnAddStore_Click(object sender, EventArgs e)
     {
         LotteryWebService.DBService lws = new LotteryWebService.DBService();
         LotteryWebService.WebServiceResponse wsr = new LotteryWebService.WebServiceResponse();
         try
         {
-            wsr = lws.InsertTicketInfo(TicketNo.Value.Trim(), int.Parse(TicketPrice.Value.Trim()), int.Parse(PriceAmount.Value.Trim()), DateTime.Parse(DateTime.Now.ToString("yyy-MM-dd")), DateTime.Parse(CloseDate.Value), DateTime.Parse(DrawDate.Value), Status.SelectedItem.Text);
+            wsr = lws.InsertStoreInfo(StoreName.Value.Trim(), Address.Value.Trim(), Timing.Value.Trim());
+
             if (wsr.Status == "1")
             {
-                Response.Redirect("Admin.aspx", false);
+                Response.Redirect("Store.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
             else if(wsr.Status=="0")
@@ -55,12 +57,8 @@ public partial class AddTicket : System.Web.UI.Page
 
         catch (Exception ex)
         {
-            //string message = string.Format("Message: {0}", ex.Message);
-            // int st = message.IndexOf("System.Exception:");
-            // int en = message.IndexOf(".\n");
+            
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
-
-
     }
 }

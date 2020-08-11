@@ -13,13 +13,19 @@ public partial class AdminHome : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                if (Session["Name"] == null)
+                if (!string.IsNullOrEmpty(Session["Name"] as string))
+                {  
+                   
+                }
+                else
                 {
                     Response.Redirect("Home.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();
                 }
                
+
             }
+
 
         }
         catch (Exception ex)

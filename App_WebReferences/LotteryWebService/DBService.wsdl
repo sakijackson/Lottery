@@ -2,6 +2,21 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="VerifyUserLogin">
         <s:complexType>
           <s:sequence>
@@ -116,6 +131,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="InsertStoreInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Store" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Timing" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertStoreInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertStoreInfoResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="UpdateTicketInfo">
         <s:complexType>
           <s:sequence>
@@ -159,6 +190,16 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="GetUserCountResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketCount">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTicketCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketCountResult" type="tns:WebServiceResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -307,6 +348,12 @@
       </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="loginSoapIn">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="loginSoapOut">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
   <wsdl:message name="VerifyUserLoginSoapIn">
     <wsdl:part name="parameters" element="tns:VerifyUserLogin" />
   </wsdl:message>
@@ -343,6 +390,12 @@
   <wsdl:message name="InsertTicketInfoSoapOut">
     <wsdl:part name="parameters" element="tns:InsertTicketInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="InsertStoreInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertStoreInfo" />
+  </wsdl:message>
+  <wsdl:message name="InsertStoreInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertStoreInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="UpdateTicketInfoSoapIn">
     <wsdl:part name="parameters" element="tns:UpdateTicketInfo" />
   </wsdl:message>
@@ -360,6 +413,12 @@
   </wsdl:message>
   <wsdl:message name="GetUserCountSoapOut">
     <wsdl:part name="parameters" element="tns:GetUserCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketCount" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketCountResponse" />
   </wsdl:message>
   <wsdl:message name="GetUserInfoSoapIn">
     <wsdl:part name="parameters" element="tns:GetUserInfo" />
@@ -404,6 +463,10 @@
     <wsdl:part name="parameters" element="tns:GetResultsInfoResponse" />
   </wsdl:message>
   <wsdl:portType name="DBServiceSoap">
+    <wsdl:operation name="login">
+      <wsdl:input message="tns:loginSoapIn" />
+      <wsdl:output message="tns:loginSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="VerifyUserLogin">
       <wsdl:input message="tns:VerifyUserLoginSoapIn" />
       <wsdl:output message="tns:VerifyUserLoginSoapOut" />
@@ -428,6 +491,10 @@
       <wsdl:input message="tns:InsertTicketInfoSoapIn" />
       <wsdl:output message="tns:InsertTicketInfoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="InsertStoreInfo">
+      <wsdl:input message="tns:InsertStoreInfoSoapIn" />
+      <wsdl:output message="tns:InsertStoreInfoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="UpdateTicketInfo">
       <wsdl:input message="tns:UpdateTicketInfoSoapIn" />
       <wsdl:output message="tns:UpdateTicketInfoSoapOut" />
@@ -439,6 +506,10 @@
     <wsdl:operation name="GetUserCount">
       <wsdl:input message="tns:GetUserCountSoapIn" />
       <wsdl:output message="tns:GetUserCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketCount">
+      <wsdl:input message="tns:GetTicketCountSoapIn" />
+      <wsdl:output message="tns:GetTicketCountSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserInfo">
       <wsdl:input message="tns:GetUserInfoSoapIn" />
@@ -471,6 +542,15 @@
   </wsdl:portType>
   <wsdl:binding name="DBServiceSoap" type="tns:DBServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="VerifyUserLogin">
       <soap:operation soapAction="http://tempuri.org/VerifyUserLogin" style="document" />
       <wsdl:input>
@@ -525,6 +605,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InsertStoreInfo">
+      <soap:operation soapAction="http://tempuri.org/InsertStoreInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdateTicketInfo">
       <soap:operation soapAction="http://tempuri.org/UpdateTicketInfo" style="document" />
       <wsdl:input>
@@ -545,6 +634,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUserCount">
       <soap:operation soapAction="http://tempuri.org/GetUserCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketCount">
+      <soap:operation soapAction="http://tempuri.org/GetTicketCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -618,6 +716,15 @@
   </wsdl:binding>
   <wsdl:binding name="DBServiceSoap12" type="tns:DBServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="login">
+      <soap12:operation soapAction="http://tempuri.org/login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="VerifyUserLogin">
       <soap12:operation soapAction="http://tempuri.org/VerifyUserLogin" style="document" />
       <wsdl:input>
@@ -672,6 +779,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InsertStoreInfo">
+      <soap12:operation soapAction="http://tempuri.org/InsertStoreInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdateTicketInfo">
       <soap12:operation soapAction="http://tempuri.org/UpdateTicketInfo" style="document" />
       <wsdl:input>
@@ -692,6 +808,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUserCount">
       <soap12:operation soapAction="http://tempuri.org/GetUserCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketCount">
+      <soap12:operation soapAction="http://tempuri.org/GetTicketCount" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -95,21 +95,21 @@
     <header class="header-one">
            
             <!-- Start top bar -->
-            <%--<div class="topbar-area">
+            <div class="topbar-area">
                 <div class="container">
                     <div class="row">
                         <div class=" col-md-8 col-sm-8 col-xs-12">
                             <div class="topbar-left">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-envelope"></i> info@playdo4.com</a></li>
-                                    <%--<li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>-
+                                    <li><a href="#"><i class="fa fa-envelope"></i> help@.com</a></li>
+                                    <li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>-
                                 </ul>  
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12">
                             <div class="topbar-right">
 								<ul>
-                                    <%--<li><a href="#"><img src="img/icon/w1.png" alt="">English</a>
+                                 <%--<li><a href="#"><img src="img/icon/w1.png" alt="">English</a>
                                        <ul>
                                            <li><a href="#"><img src="img/icon/w2.png" alt="">Deutsch</a>
                                            <li><a href="#"><img src="img/icon/w3.png" alt="">Español</a>
@@ -117,13 +117,13 @@
                                            <li><a href="#"><img src="img/icon/w5.png" alt="">العربية</a>
                                        </ul>
                                     </li>
-                                    <li><a id="log" runat="server" href="#" onclick="BtnLogin()"><img runat="server" src="img/icon/login.png" alt=""/>Login</a> </li>
+                                    <li><a id="log" runat="server" href="#" onclick="BtnLogin()"><img runat="server" src="img/icon/login.png" alt=""/>Login</a> </li>--%>
                                 </ul>
 							</div>
                         </div>
                     </div>
                 </div>
-            </div>--%>
+            </div>
             <!-- End top bar -->
             <!-- header-area start -->
             <div id="sticker" class="header-area header-area-2 hidden-xs">
@@ -168,6 +168,10 @@
                                                 </ul>
                                             </li>--%>
                                             <li><a class="pagess" href="UserLottery.aspx">Lottery</a></li>
+                                            <li><a class="pagess" href="UserLottery.aspx">NEWS&UPDATES</a></li>
+                                            <li><a class="pagess" href="UserLottery.aspx">Winners</a></li>
+                                            <li><a class="pagess" href="UserLottery.aspx">Draw Dates</a></li>
+                                            <li><a class="pagess" href="UserLottery.aspx">Store Loactor</a></li>
                                             <li><a class="pagess" href="#">Account</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="UserAccount.aspx">Personal Details</a></li>
