@@ -270,6 +270,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetStoreInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStoreInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStoreInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetTransactionsInfo">
         <s:complexType />
       </s:element>
@@ -438,6 +455,12 @@
   <wsdl:message name="GetTicketsInfoSoapOut">
     <wsdl:part name="parameters" element="tns:GetTicketsInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="GetStoreInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStoreInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStoreInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="GetTransactionsInfoSoapIn">
     <wsdl:part name="parameters" element="tns:GetTransactionsInfo" />
   </wsdl:message>
@@ -522,6 +545,10 @@
     <wsdl:operation name="GetTicketsInfo">
       <wsdl:input message="tns:GetTicketsInfoSoapIn" />
       <wsdl:output message="tns:GetTicketsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreInfo">
+      <wsdl:input message="tns:GetStoreInfoSoapIn" />
+      <wsdl:output message="tns:GetStoreInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetTransactionsInfo">
       <wsdl:input message="tns:GetTransactionsInfoSoapIn" />
@@ -670,6 +697,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetTicketsInfo">
       <soap:operation soapAction="http://tempuri.org/GetTicketsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreInfo">
+      <soap:operation soapAction="http://tempuri.org/GetStoreInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -844,6 +880,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetTicketsInfo">
       <soap12:operation soapAction="http://tempuri.org/GetTicketsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetStoreInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

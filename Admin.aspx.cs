@@ -11,13 +11,30 @@ public partial class Admin : System.Web.UI.Page
     LotteryWebService.AdminInfo ai;
     protected void Page_Load(object sender, EventArgs e)
     {
-        lws = new LotteryWebService.DBService();
-        ai = new LotteryWebService.AdminInfo();
+        try
+        {
+            if (!IsPostBack)
+            {
+                if (!string.IsNullOrEmpty(Session["Name"] as string))
+                {
+
+                    Response.Redirect("AdminHome.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                }
+                
+            }
+        }
+        catch (Exception ex)
+        {
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        }
     }
     protected void BtnLogin_Click(object sender, EventArgs e)
     {
         try
         {
+            lws = new LotteryWebService.DBService();
+            ai = new LotteryWebService.AdminInfo();
             ai = lws.VerifyAdminLogin(UserId.Value.Trim(), Password.Value.Trim());
             if (ai.Status == "1")
             {

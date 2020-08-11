@@ -21,7 +21,7 @@
                 </div>
                 </div>
         </div>--%>
-    <div class="achivement-area bg-color area-padding-2">
+    <div class="achivement-area bg-color fix area-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -33,21 +33,45 @@
             </div>
            <div class="row">
                 <div class="achivement-content">
-                    <div class="col-md-2 col-sm-2 col-xs-12"></div>
+                    
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-achive first-achive">
-                            <h6>Ongoing Ticket No:</h6>
-                            <label id="CurrentNo" runat="server">      </label>       
-
+                            <!-- fun_text  -->
+                            <div class="single-achive first-achive">
+                                <div class="achive-image">
+                                    <img src="img/about/achive1.png" alt="">
+                                </div>
+                                <div class="achivement-text">
+                                    <span id="ActiveCount" runat="server" class="achive-number"></span>
+                                    <h6>Live online</h6>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-achive first-achive">
-                            <h6>Total No of Users:</h6>
-                             <label id="TotalUsersCount" runat="server">      </label>    
+                   <div class="col-md-4 col-sm-4 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-achive second-achive">
+                                <div class="achive-image">
+                                    <img src="img/about/achive2.png" alt="">
+                                </div>
+                                <div class="achivement-text">
+                                    <span id="userCount" runat="server" class="achive-number"></span>
+                                    <h6>Active Member</h6>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-12"></div>
+                        <%--<div class="col-md-4 col-sm-4 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-achive">
+                                <div class="achive-image">
+                                    <img src="img/about/achive3.png" alt="">
+                                </div>
+                                <div class="achivement-text">
+                                    <span class="achive-number">2000K+</span>
+                                    <h6>Daily Reward</h6>
+                                </div>
+                            </div>
+                        </div>--%>
+                  
+                   
                 </div>
             </div>
         </div>

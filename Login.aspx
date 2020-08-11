@@ -6,7 +6,7 @@
 <head runat="server">
 	<meta charset="utf-8"/>
 		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Login - Playdo</title>
+    <title>Login - Genting Vegas </title>
     <meta name="description" content=""/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -167,7 +167,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Playdo</a> All Rights Reserved
+                                    <a href="#">Genting Vegas </a> All Rights Reserved
                                 </p>
                             </div>
                         </div>

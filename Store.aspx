@@ -25,26 +25,44 @@
                                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                                  <label>Timing</label>
                                                 <input type="text" id="Timing" runat="server" class="form-control" placeholder="Timing" autocomplete="off" required="required"  data-error="Please enter Timing"/>
-                                            </div>
-                                               
-                                           
-                                            
+                                            </div>                                              
+                                                                                       
                                             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                                <asp:Button ID="BtnAddStore" runat="server"  Text="Add" CssClass="slide-btn login-btn" OnClick="BtnAddStore_Click" />
-                                                 
+                                                <asp:Button ID="BtnAddStore" runat="server"  Text="Add" CssClass="slide-btn login-btn" OnClick="BtnAddStore_Click" />                                                 
                                                 <%--<button type="submit" runat="server" id="submit" class="slide-btn login-btn">Login</button>--%>
                                                 <div id="msgSubmit" class="h3 text-center hidden"></div> 
                                                 <div class="clearfix"></div>
-                                            </div>
-                                            
+                                            </div>                                            
                                         <%--</form>--%> 
-                                    </div>
+                                    </div>                                     
                                 </div>
                             </div>
                         </div>
                      </div>
                 </div>
                 </div>
+         <div class="payment-history-area bg-color fix area-padding" style="background:none;padding:23px;">
+            <div class="container">
+               <%-- <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+							<h3>Store</h3>							
+						</div>
+					</div>
+				</div>--%>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="deposite-content">
+                            <div class="diposite-box">
+                                <div class="deposite-table">                                    
+                                <asp:Literal ID = "StoreInfo" runat = "server" />                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
 </asp:Content>
 

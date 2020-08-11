@@ -17,7 +17,7 @@ public partial class ViewTicket : System.Web.UI.Page
         {            
             if (!IsPostBack)
             {
-                if (Session["Name"] != null)
+                if (!string.IsNullOrEmpty(Session["Name"] as string))
                 {
                     db = new LotteryWebService.DBService();
                     Ticketsds = db.GetTicketsInfo();

@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>User | Playdo</title>
+    <title>User | Genting Vegas </title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -106,21 +106,7 @@
                                 </ul>  
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="topbar-right">
-								<ul>
-                                 <%--<li><a href="#"><img src="img/icon/w1.png" alt="">English</a>
-                                       <ul>
-                                           <li><a href="#"><img src="img/icon/w2.png" alt="">Deutsch</a>
-                                           <li><a href="#"><img src="img/icon/w3.png" alt="">Español</a>
-                                           <li><a href="#"><img src="img/icon/w4.png" alt="">Français</a>
-                                           <li><a href="#"><img src="img/icon/w5.png" alt="">العربية</a>
-                                       </ul>
-                                    </li>
-                                    <li><a id="log" runat="server" href="#" onclick="BtnLogin()"><img runat="server" src="img/icon/login.png" alt=""/>Login</a> </li>--%>
-                                </ul>
-							</div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -154,24 +140,16 @@
                                     <div class="main-menu">
                                         <ul class="nav navbar-nav navbar-right">
                                             <li><a class="pagess" href="UserHome.aspx">Home</a>
-                                                <%--<ul class="sub-menu">
-                                                    <li><a href="index.html">Home 01</a></li>
-                                                    <li><a href="index-2.html">Home 02</a></li>
-                                                    <li><a href="index-3.html">Home 03</a></li>
-                                                </ul>--%>
+                                                
+                                               
                                             </li>
-                                            <%--<li><a class="pagess" href="play.html">Play</a></li>
-                                            <li><a class="pagess" href="#">Games</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="games.html">All Games</a></li>
-                                                    <li><a href="games-details.html">Games Details</a></li>
-                                                </ul>
-                                            </li>--%>
+                                          
+                                          
                                             <li><a class="pagess" href="UserLottery.aspx">Lottery</a></li>
                                             <li><a class="pagess" href="UserLottery.aspx">NEWS&UPDATES</a></li>
                                             <li><a class="pagess" href="UserLottery.aspx">Winners</a></li>
                                             <li><a class="pagess" href="UserLottery.aspx">Draw Dates</a></li>
-                                            <li><a class="pagess" href="UserLottery.aspx">Store Loactor</a></li>
+                                            <li><a class="pagess" href="StoreLocator.aspx">Store Loactor</a></li>
                                             <li><a class="pagess" href="#">Account</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="UserAccount.aspx">Personal Details</a></li>
@@ -261,12 +239,12 @@
                                 <p>
                                     Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define their new business objectives and then create. Replacing a  maintains the amount of lines. 
                                 </p>
-                                <div class="subs-feilds">
+                               <%-- <div class="subs-feilds">
                                     <div class="suscribe-input">
                                         <input type="email" class="email form-control width-80" id="sus_email" placeholder="Type Email">
                                         <button type="submit" id="sus_submit" class="add-btn">Subscribe</button>
                                     </div>
-                                </div>
+                                </div>--%>
                             </div>
                         </div>
                     </div>
@@ -277,13 +255,7 @@
                                 <h4>Games list</h4>
                                 <ul class="footer-list">
                                     <li><a href="#">Lottery</a></li>
-
-                                    <%-- <li><a href="#">Dicks game</a></li>
-                                        <li><a href="#">Lobester</a></li>
-                                        <li><a href="#">Gangstar</a></li>
-                                        <li><a href="#">Royal Casino</a></li>
-                                        <li><a href="#">Align fight</a></li>
-                                        <li><a href="#">Black night</a></li>--%>
+                                   
                                 </ul>
                             </div>
                         </div>
@@ -305,21 +277,18 @@
                         </div>
                     </div>
                     <!-- end single footer -->
-                    <%--<div class="col-md-2 hidden-sm col-xs-12">
+                    <div class="col-md-2 hidden-sm col-xs-12">
                             <div class="footer-content">
                                 <div class="footer-head">
                                     <h4>Payments</h4>
-                                    <ul class="footer-list">
-                                        <li><a href="#">Ripple coin</a></li>
+                                    <ul class="footer-list">                                       
                                         <li><a href="#">Bitcoin</a></li>
-                                        <li><a href="#">Ethireum</a></li>
-                                        <li><a href="#">Light coin</a></li>
-                                        <li><a href="#">Coin base</a></li>
+                                        <li><a href="#">Ethireum</a></li>                                        
                                         <li><a href="#">Skrill card</a></li>
                                     </ul>
                                 </div>
                             </div>
-                        </div>--%>
+                        </div>
                     <!-- end single footer -->
                     <div class="col-md-2 hidden-sm col-xs-12">
                         <div class="footer-content last-content">
@@ -327,8 +296,8 @@
                                 <h4>Support</h4>
                                 <ul class="footer-list">
                                     <li><a href="#">Customer Care</a></li>
-                                    <%--  <li><a href="#">Live chat</a></li>
-                                        <li><a href="#">Notification</a></li>--%>
+                               <%--<li><a href="#">Live chat</a></li>--%>
+                                        
                                     <li><a href="#">Privacy</a></li>
                                     <li><a href="#">Terms & Condition</a></li>
                                     <li><a href="#">Contact us </a></li>
@@ -347,7 +316,7 @@
                         <div class="copyright">
                             <p>
                                 Copyright © 2020
-                                    <a href="#">Playdo</a> All Rights Reserved
+                                    <a href="#">Genting Vegas </a> All Rights Reserved
                             </p>
                         </div>
                     </div>

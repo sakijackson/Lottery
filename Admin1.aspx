@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8"/> 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Admin | Playdo</title>
+    <title>Admin | Genting Vegas </title>
        <link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
 
     <!-- all css here -->
