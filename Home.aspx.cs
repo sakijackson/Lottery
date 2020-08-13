@@ -1,5 +1,9 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 public partial class Home : System.Web.UI.Page
 {
@@ -9,26 +13,28 @@ public partial class Home : System.Web.UI.Page
     {
         try
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 if (!string.IsNullOrEmpty(Session["UserId"] as string))
                 {
-                    Response.Redirect("UserHome.aspx", false);
-                    Context.ApplicationInstance.CompleteRequest();
+                    //Response.Redirect("UserHome.aspx", false);
+                   // Context.ApplicationInstance.CompleteRequest();
+
                 }
                 else
                 {
                     db = new LotteryWebService.DBService();
                     wsr = db.GetUserCount();
-                    if(wsr.Status!="0")
+                    if (wsr.Status != "0")
                     {
-                        userCount.InnerText = wsr.Status+"+";
-                        ActiveCount.InnerText=Application["TotalOnlineUsers"].ToString();
+                        userCount.InnerText = wsr.Status + "+";
+                        ActiveCount.InnerText = Application["TotalOnlineUsers"].ToString();
                     }
-                    else if(wsr.Status=="0")                        
+                    else if (wsr.Status == "0")
                     {
-                        ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error+ "');", true);
+                        ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error + "');", true);
                     }
+                   
 
                 }
             }
@@ -37,10 +43,8 @@ public partial class Home : System.Web.UI.Page
         {
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
-
-
     }
-    protected void BtnLogin(object sender,EventArgs e)
+    protected void BtnLogin(object sender, EventArgs e)
     {
         try
         {
@@ -84,8 +88,6 @@ public partial class Home : System.Web.UI.Page
         //}
     }
 }
-
-
 //TicketCount.InnerText = "hello";
 // lblDate.Text = strValue;
 //DateTime end = Convert.ToDateTime("2020/07/08 18:50:00");

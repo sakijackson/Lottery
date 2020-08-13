@@ -34,6 +34,15 @@
 		<script src="js/vendor/jquery-1.12.4.min.js"></script>
     <!-- modernizr css -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+     <script type="text/javascript">
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+     </script>
     <%--<script type="text/javascript" >
         $(document).ready(function () { 
             $("#ViewTicket").hide();  
@@ -100,12 +109,12 @@
                                                
                                             </li>                                            
                                        
-                                            <li><a class="pagess" href="#">Lottery</a>
-                                                <ul class="sub-menu">
+                                            <li><a class="pagess" href="Lottery.aspx">Lottery</a>
+                                                <%--<ul class="sub-menu">
                                                    <li><a id="Add" runat="server" href="AddTicket.aspx">Add Ticket</a></li>
                                                     <li><a id="View" runat="server" href="ViewTicket.aspx">view</a></li>
                                                     
-                                                </ul>
+                                                </ul>--%>
                                             </li>
                                             <li><a class="pagess" href="#">User</a>
                                                 <ul class="sub-menu">

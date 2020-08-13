@@ -3,19 +3,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="ViewUsers" style="padding: 100px 0px;position: relative;">
+    <div id="ViewTicket" style="padding: 100px 0px;position: relative;">
           <div class="login-overlay"></div>
-            <div class="table" style="width:45%" >
-                <div class="table-cell">
-                    <div class="container">
-                        <div class="row">
-                            <div  class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
-                                <%--<div class="login-form">--%>
-                                    <h4 class="login-title text-center">Users List</h4>
-                                    <div class="row">                                       
+      <div class="payment-history-area bg-color fix area-padding" style="background:none;padding:23px;">
+            <div class="container"> 
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+							<h3>Tickets</h3>							
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="deposite-content">
+                            <div class="diposite-box">
+                                <div class="deposite-table table-responsive" style="max-height:600px;overflow-y:scroll;">  
                          
-                <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled"  CssClass="table table-borderless" >
-            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None">
+         
             <Columns>
                  <asp:TemplateField HeaderText="Fisrt Name"> 
             
@@ -118,29 +124,17 @@
                                 <asp:Label ID="Label13" runat="server" Text='<%# Bind("Code") %>'>
                                 </asp:Label>  
                             </ItemTemplate>  
-                        </asp:TemplateField>   
-               
-                 
-            </Columns>
-
-            <EditRowStyle BackColor="#999999" />
-            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#E2DED6" ForeColor="#333333" Font-Bold="True" />
-            <SortedAscendingCellStyle BackColor="#E9E7E2" />
-            <SortedAscendingHeaderStyle BackColor="#506C8C" />
-            <SortedDescendingCellStyle BackColor="#FFFDF8" />
-            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-        </asp:GridView>              
-                                    <%--</div>--%>
-                                </div>
+                        </asp:TemplateField> 
+                                
+            </Columns>           
+        </asp:GridView>   
+                                     </div>
                             </div>
                         </div>
-                     </div>
+                    </div>
                 </div>
-                </div>
+            </div>
         </div>
+            </div>
 </asp:Content>
 

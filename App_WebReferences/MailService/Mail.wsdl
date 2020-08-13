@@ -25,6 +25,22 @@
           <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="SendForgetEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendForgetEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendForgetEmailResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="VerifyActivationEmail">
         <s:complexType>
           <s:sequence>
@@ -47,6 +63,12 @@
   <wsdl:message name="SendActivationEmailSoapOut">
     <wsdl:part name="parameters" element="tns:SendActivationEmailResponse" />
   </wsdl:message>
+  <wsdl:message name="SendForgetEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendForgetEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendForgetEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendForgetEmailResponse" />
+  </wsdl:message>
   <wsdl:message name="VerifyActivationEmailSoapIn">
     <wsdl:part name="parameters" element="tns:VerifyActivationEmail" />
   </wsdl:message>
@@ -58,6 +80,10 @@
       <wsdl:input message="tns:SendActivationEmailSoapIn" />
       <wsdl:output message="tns:SendActivationEmailSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SendForgetEmail">
+      <wsdl:input message="tns:SendForgetEmailSoapIn" />
+      <wsdl:output message="tns:SendForgetEmailSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="VerifyActivationEmail">
       <wsdl:input message="tns:VerifyActivationEmailSoapIn" />
       <wsdl:output message="tns:VerifyActivationEmailSoapOut" />
@@ -67,6 +93,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="SendActivationEmail">
       <soap:operation soapAction="http://tempuri.org/SendActivationEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendForgetEmail">
+      <soap:operation soapAction="http://tempuri.org/SendForgetEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -88,6 +123,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="SendActivationEmail">
       <soap12:operation soapAction="http://tempuri.org/SendActivationEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendForgetEmail">
+      <soap12:operation soapAction="http://tempuri.org/SendForgetEmail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

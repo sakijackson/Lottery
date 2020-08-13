@@ -1,17 +1,17 @@
-﻿<!doctype html>
-<html class="no-js" lang="en">
-	<head>
-		<meta charset="utf-8">
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Home.master.cs" Inherits="Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>About us | Genting Vegas </title>
+		<title>Home | Playdo</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
 		<!-- favicon -->		
 		<link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
-
 		<!-- all css here -->
-
 		<!-- bootstrap v3.3.6 css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<!-- owl.carousel css -->
@@ -30,17 +30,17 @@
 		<link rel="stylesheet" href="style.css">
 		<!-- responsive css -->
 		<link rel="stylesheet" href="css/responsive.css">
-
 		<!-- modernizr css -->
 		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
-	</head>
-    <body>
-
-        <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-        <header class="header-one">
+     
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+		 <header class="header-one">
            
                 <!-- Start top bar -->
                 <div class="topbar-area">
@@ -49,12 +49,19 @@
                             <div class=" col-md-8 col-sm-8 col-xs-12">
                                 <div class="topbar-left">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-envelope"></i> help@.com</a></li>
-                                        <li><a href="#"><i class="fa fa-clock-o"></i> Live support-</a></li>
+                                        <li><a href="#"><i class="fa fa-envelope"></i>help@gentingvegas.live</a></li>
+                                        <li><a href="#"><i class="fa fa-clock-o"></i>Live support-</a></li>
                                     </ul>
                                 </div>
                             </div>
-                           
+                            <%--<div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="topbar-right">
+                                    <ul>                                      
+                                        
+                                        <li><a id="log1" runat="server" href="#" ><img runat="server" src="img/icon/login.png" alt="" />Login</a> </li>
+                                    </ul>
+                                </div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>
@@ -68,7 +75,7 @@
                                 <div class="logo">
                                     <!-- Brand -->
                                     <a class="navbar-brand " href="Home.aspx">
-                                        <img src="img/logo/logo2.png" alt="" />
+                                        <img src="img/logo/logo.png" alt="" />
                                     </a>
                                 </div>
                                 <!-- logo end -->
@@ -76,20 +83,67 @@
                             <div class="col-md-9 col-sm-9">
                                 <div class="header-right-link">
                                     <!-- search option end -->
-                                    
+                                    <%-- <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="s-menu" OnClick="btnLogin_Click" />--%>
                                     <a id="Log" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>
 
                                 </div>
-                                
+                                <%-- <div class="header-right-link">
+                                    <!-- search option end -->
+                                    <asp:Button ID="BtnLogin" runat="server" Text="Login" CssClass="slide-btn login-btn" />
+                                    <%--<a id="A1" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>-
+
+                                </div>--%>
                                 <!-- mainmenu start -->
                                 <nav class="navbar navbar-default">
                                     <div class="collapse navbar-collapse" id="navbar-example">
                                         <div class="main-menu">
                                             <ul class="nav navbar-nav navbar-right">
-                                               
-                                                
-                                                
-                                                
+                                                <%--
+                                                <li>
+                                                    <a class="pagess" href="Home.aspx">Home</a>--%>
+                                                    <%--<ul class="sub-menu">
+                                                        <li><a href="index.html">Home 01</a></li>
+                                                        <li><a href="index-2.html">Home 02</a></li>
+                                                        <li><a href="index-3.html">Home 03</a></li>
+                                                    </ul>--%>
+                                                    <%--
+                                                </li>--%>
+                                                <%--
+                                                <li><a class="pagess" href="play.html">Play</a></li>
+                                                <li>
+                                                    <a class="pagess" href="#">Games</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="games.html">All Games</a></li>
+                                                        <li><a href="games-details.html">Games Details</a></li>
+                                                    </ul>
+                                                </li>--%>
+                                                <%--
+                                                <li><a class="pagess" href="lottery.aspx">Lottery</a></li>--%>
+                                                <%--
+                                                <li>
+                                                    <a class="pagess" href="#">Pages</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="about.html">About</a></li>
+                                                        <li><a href="team.html">team</a></li>
+                                                        <li><a href="faq.html">FAQ</a></li>
+                                                        <li><a href="pricing.html">Pricing</a></li>
+                                                        <li><a href="login.html">Login</a></li>
+                                                        <li><a href="signup.html">Signup</a></li>
+                                                        <li><a href="error.html">Error</a></li>
+                                                        <li><a href="terms.html">terms & Conditions</a></li>
+                                                    </ul>
+                                                </li>--%>
+                                                <%--
+                                                <li>
+                                                    <a class="pagess" href="#">Blog</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="blog.html">Blog grid</a></li>
+                                                        <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
+                                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                                    </ul>
+                                                </li>--%>
+                                                <%--
+                                                <li><a href="contact.html">contacts</a></li>--%>
                                             </ul>
                                         </div>
                                     </div>
@@ -107,7 +161,9 @@
                             <div class="col-md-12">
                                 <div class="mobile-menu">
                                     <div class="logo">
-                                        <a href="index.html"><img src="img/logo/logo2.png" alt="" /></a>
+                                        <a href="index.html">
+                                            <img src="img/logo/logo2.png" alt="" />
+                                        </a>
                                     </div>
                                     <nav id="dropdown">
                                         <ul>
@@ -158,32 +214,15 @@
                     </div>
                 </div>
                 <!-- mobile-menu-area end -->
-           
+            
         </header>
         <!-- header end -->
-        <!-- header end -->
-        <!-- Start Bottom Header -->
-        <div class="page-area">
-            <!--<div class="breadcumb-overlay"></div>-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="breadcrumb">
-                            <div class="section-headline">
-                                <h2>About Us</h2>
-                            </div>
-                            <ul>
-                                <li class="home-bread">Home</li>
-                                <li>About us</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END Header -->
-        <!-- Start Footer Area -->
-        <footer class="footer-1">
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+   
+         <footer class="footer-1">
             <div class="footer-area">
                 <div class="container">
                     <div class="row">
@@ -191,12 +230,22 @@
                             <div class="footer-content logo-footer">
                                 <div class="footer-head">
                                     <div class="footer-logo">
-                                        <a class="footer-black-logo" href="#"><img src="img/logo/logo2.png" alt=""></a>
+                                        <a class="footer-black-logo" href="#">
+                                            <img src="img/logo/logo.png" alt="" />
+                                        </a>
                                     </div>
                                     <p>
-                                        Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define their new business objectives and then create. Replacing a  maintains the amount of lines.
-                                    </p>
+                                        Genting Vegas Gaming Sdn Bhn company Is Licensed And Regulated By The Malaysian Gaming Authority, Holding The Corporate Group License Number Mga/Crp/237/2013 Issued On 1st August 2013 To Provide Type 1 And Type 2 Gaming Services. Registered Office: The Pinnacle Pirsiaran Lagoon, Subang Suit 20-01 & 20-02b, Level 20, Bandra Sunway, 47500,Malaysia.
+                                        Gambling Can Be Addictive. Play Responsibly. 18+
 
+                                        <%--Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define their new business objectives and then create. Replacing a  maintains the amount of lines.--%>
+                                    </p>
+                                    <%-- <div class="subs-feilds">
+                                        <div class="suscribe-input">
+                                            <input type="email" class="email form-control width-80" id="sus_email" placeholder="Type Email">
+                                            <button type="submit" id="sus_submit" class="add-btn">Subscribe</button>
+                                        </div>
+                                    </div>--%>
                                 </div>
                             </div>
                         </div>
@@ -225,9 +274,13 @@
                                 <div class="footer-head">
                                     <h4>Company</h4>
                                     <ul class="footer-list">
-                                        <li><a href="#">About us</a></li>
+                                        <li><a href="About.aspx">About us</a></li>
                                         <li><a href="#">Services </a></li>
-
+                                        <%--
+                                        <li><a href="#">Events</a></li>
+                                        <li><a href="#">Promotion</a></li>
+                                        <li><a href="#">Transition</a></li>
+                                        <li><a href="#">Social Media</a></li>--%>
                                     </ul>
                                 </div>
                             </div>
@@ -238,11 +291,13 @@
                                 <div class="footer-head">
                                     <h4>Payments</h4>
                                     <ul class="footer-list">
-
-                                        <li><a href="#">Bitcoin</a></li>
+                                         <li><a href="#">Bitcoin</a></li>
                                         <li><a href="#">Ethireum</a></li>
                                         <li><a href="#">Skrill</a></li>
-
+                                         <%-- <li><a href="#">Ripple coin</a></li>                                       
+                                         <li><a href="#">Light coin</a></li>
+                                        <li><a href="#">Coin base</a></li>                                        
+                                        <li><a href="#">Skrill card</a></li>--%>
                                     </ul>
                                 </div>
                             </div>
@@ -254,6 +309,9 @@
                                     <h4>Support</h4>
                                     <ul class="footer-list">
                                         <li><a href="#">Customer Care</a></li>
+                                        <%--<li><a href="#">Live chat</a></li>
+                                        <li><a href="#">Notification</a></li>--%>
+                                        <li><a href="faq.aspx">FAQ</a></li>
                                         <li><a href="#">Privacy</a></li>
                                         <li><a href="#">Terms & Condition</a></li>
                                         <li><a href="#">Contact us </a></li>
@@ -272,7 +330,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Genting Vegas </a> All Rights Reserved
+                                    <a href="#">Genting Vegas </a>All Rights Reserved
                                 </p>
                             </div>
                         </div>
@@ -301,5 +359,7 @@
         <script src="js/plugins.js"></script>
         <!-- main js -->
         <script src="js/main.js"></script>
-    </body>
+        
+    </form>
+</body>
 </html>

@@ -56,4 +56,19 @@ public partial class UserHome : System.Web.UI.Page
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
     }
+
+    protected void BtnWheel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            
+            Response.Redirect("Spin.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
+
+        }
+        catch (Exception ex)
+        {
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        }
+    }
 }

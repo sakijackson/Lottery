@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 
 public partial class UserAccount : System.Web.UI.Page
 {
+    LotteryWebService.DBService lws;
+    LotteryWebService.UserInfo ui;
+    LotteryWebService.WebServiceResponse wsr;
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -15,9 +18,8 @@ public partial class UserAccount : System.Web.UI.Page
             {
                 if (!string.IsNullOrEmpty(Session["UserId"] as string))
                 {
-
-                    LotteryWebService.DBService lws = new LotteryWebService.DBService();
-                    LotteryWebService.UserInfo ui = new LotteryWebService.UserInfo();
+                    lws = new LotteryWebService.DBService();
+                    ui = new LotteryWebService.UserInfo();
 
                     ui = lws.GetUserInfo(Session["UserId"].ToString());
 
@@ -55,5 +57,36 @@ public partial class UserAccount : System.Web.UI.Page
         {
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
+    }
+
+    protected void BtnUpdate_Click(object sender, EventArgs e)
+    {
+        //try
+        //{
+        //    lws = new LotteryWebService.DBService();
+        //    wsr = new LotteryWebService.WebServiceResponse();
+
+        //    lws = lws.UpdateUserInfo(FirstName.Value.Trim(), LastName.Value.Trim(), PhoneNumber.Value, Email.Value.Trim(), DOB.Value.Trim(), Country.SelectedItem.Value.Trim(), IDType.Items[IDType.SelectedIndex].Text.Trim(), IDNo.Value.Trim(), Address.Value.Trim(), State.Value.Trim(), City.Value.Trim(), Code.Value.Trim());
+        //        if (wsr.Status == "1")
+        //        {
+                   
+        //                //ClientScript.RegisterStartupScript(GetType(), "alert", "alert('');", true);
+        //                Response.Redirect("UserAccount.aspx", false);
+        //                Context.ApplicationInstance.CompleteRequest();
+                   
+        //        }
+        //        else
+        //        {
+        //            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error + "');", true);
+        //        }           
+
+            
+
+
+        //}
+        //catch (Exception ex)
+        //{
+        //    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        //}
     }
 }

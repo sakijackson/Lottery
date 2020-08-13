@@ -46,8 +46,8 @@ public partial class AddTicket : System.Web.UI.Page
                         }
 
                         //Table end.
-                        sb.Append("</table>");
-                        TicketsTable.Text = sb.ToString();
+                        //sb.Append("</table>");
+                        //TicketsTable.Text = sb.ToString();
 
 
                     }

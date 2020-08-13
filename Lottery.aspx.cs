@@ -1,60 +1,42 @@
 ﻿using System;
+using System.Data;
 
 public partial class Lottery : System.Web.UI.Page
 {
+    LotteryWebService.DBService db;
+    DataSet Ticketsds;
     protected void Page_Load(object sender, EventArgs e)
     {
         try
         {
             if (!IsPostBack)
             {
-                if (!string.IsNullOrEmpty(Session["UserId"] as string))
+                if (!string.IsNullOrEmpty(Session["Name"] as string))
                 {
-                    LotteryWebService.DBService lws = new LotteryWebService.DBService();
-                    LotteryWebService.TicketInfo ti = new LotteryWebService.TicketInfo();
-
-                    ti = lws.GetTicketInfo();
-
-                    if (ti.Status != 0)
+                    db = new LotteryWebService.DBService();
+                    Ticketsds = db.GetTicketsInfo();
+                    if (Ticketsds.Tables["Response"].Rows[0][0].ToString() == "1")
                     {
-                        count.InnerText = ti.TicketCount.ToString() + "/" + 10;
-                        TicketPrice.InnerHtml = ti.TicketPrice.ToString();
-                        PriceAmount.InnerHtml = ti.PriceAmount.ToString();
-                    }
+                        GridView1.DataSource = Ticketsds.Tables["TicketsInfo"];
+                        GridView1.DataBind();
+                        Ticketsds.Dispose();
 
+                    }
+                    else if (Ticketsds.Tables["Response"].Rows[0][0].ToString() == "0")
+                    {
+                        ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + Ticketsds.Tables["Response"].Rows[0][1].ToString() + "');", true);
+                    }
+                    else
+                    {
+                        Response.Redirect("Home.aspx", false);
+                        Context.ApplicationInstance.CompleteRequest();
+                    }
                 }
                 else
                 {
                     Response.Redirect("Home.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();
-                    
                 }
-               
-            }
-            
-        }
-        catch (Exception ex)
-        {
-               ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
-        }
-        
-    }
-
-
-    protected void BtnBuyTicket_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            if (Session["UserId"] != null)
-            {
-                
-                Response.Redirect("Cart.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
-            }
-            else
-            {
-                Response.Redirect("Login.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
             }
         }
         catch (Exception ex)
@@ -63,26 +45,33 @@ public partial class Lottery : System.Web.UI.Page
         }
     }
 
-    protected void btnLogin_Click(object sender, EventArgs e)
+    protected void BtnAddTicket_Click(object sender, EventArgs e)
     {
+        LotteryWebService.DBService lws = new LotteryWebService.DBService();
+        LotteryWebService.WebServiceResponse wsr = new LotteryWebService.WebServiceResponse();
         try
         {
-            if (Session["UserId"] != null)
+            wsr = lws.InsertTicketInfo(TicketNo.Value.Trim(), int.Parse(TicketPrice.Value.Trim()), int.Parse(PriceAmount.Value.Trim()), DateTime.Parse(DateTime.Now.ToString("yyy-MM-dd")), DateTime.Parse(CloseDate.Value), DateTime.Parse(DrawDate.Value), Status.SelectedItem.Text);
+            if (wsr.Status == "1")
             {
-                Session.Abandon();
-                // Session.RemoveAll();
-                Response.Redirect("Home.aspx", false);
+                Response.Redirect("Admin.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
-            else
+            else if (wsr.Status == "0")
             {
-                Response.Redirect("Login.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error + "');", true);
             }
+
         }
+
         catch (Exception ex)
         {
+            //string message = string.Format("Message: {0}", ex.Message);
+            // int st = message.IndexOf("System.Exception:");
+            // int en = message.IndexOf(".\n");
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
+
+
     }
 }

@@ -11,8 +11,23 @@ public partial class Login : System.Web.UI.Page
     LotteryWebService.WebServiceResponse wsr;
     protected void Page_Load(object sender, EventArgs e)
     {
-        lws = new LotteryWebService.DBService();
-        wsr = new LotteryWebService.WebServiceResponse();
+        try
+        {
+            if (!IsPostBack)
+            {
+                if (!string.IsNullOrEmpty(Session["UserId"] as string))
+                {
+                    Response.Redirect("UserHome.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                }
+
+
+            }
+        }
+        catch (Exception ex)
+        {
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        }
     }
 
 
@@ -20,6 +35,8 @@ public partial class Login : System.Web.UI.Page
     {
         try
         {
+            lws = new LotteryWebService.DBService();
+            wsr = new LotteryWebService.WebServiceResponse();
             wsr = lws.VerifyUserLogin(UserId.Value.Trim(), Password.Value.Trim());
             if (wsr.Status != "")
             {

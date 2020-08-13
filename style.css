@@ -1064,10 +1064,10 @@ div#preloader {
     color:#fff;
 }
 .diposite-box span {
-    float: right;
+    /*float: right;
     font-size: 28px;
     color: #fff;
-    background: #d5057f;
+    background: #d5057f;*/
     padding: 10px 20px;
     border-radius: 3px;
     line-height: 32px;

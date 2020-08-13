@@ -145,6 +145,8 @@
                                                         <li><a class="google" href="#">google+</a></li>
                                                     </ul>--%>
                                                     <div class="acc-not">Don't have an account  <a href="Signup.aspx">Sign up</a></div>
+
+                                                     <div class="acc-not">Back to Home  <a href="Home.aspx">Home</a></div>
                                                 </div> 
                                             </div> 
                                         </form> 

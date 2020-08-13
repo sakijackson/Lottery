@@ -61,7 +61,10 @@
                 </div>
             </div>
         </div>
-         <div class="payment-history-area bg-color fix area-padding" style="background:none;padding:23px;">
+
+
+
+        <%-- <div class="payment-history-area bg-color fix area-padding" style="background:none;padding:23px;">
             <div class="container">
                <%-- <div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
@@ -69,7 +72,7 @@
 							<h3>Store</h3>							
 						</div>
 					</div>
-				</div>--%>
+				</div>
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="deposite-content">
@@ -82,7 +85,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
     </div>
 
 </asp:Content>
